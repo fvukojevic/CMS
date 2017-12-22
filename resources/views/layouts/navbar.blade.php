@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/public">
         <div class="logo-container ">
             <div class="logo">
-                <img src="../resources/fsrcmslogo.png" alt="FSRcms LOGO" rel="tooltip">
+                <img src="/resources/assets/img/fsrcmslogo.png" alt="FSRcms LOGO" rel="tooltip">
             </div>
         </div>
     </a>
@@ -15,31 +15,49 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Pocetna <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/public">Pocetna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/public/post">Kategorija</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">Kategorija</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/public/post">Kategorija</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Kategorija</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Link</a>
-                    <a class="dropdown-item" href="#">Link</a>
-                    <a class="dropdown-item" href="#">Link</a>
+                    <a class="dropdown-item" href="#">Kategorija</a>
+                    <a class="dropdown-item" href="#">Kategorija</a>
+                    <a class="dropdown-item" href="#">Kategorija</a>
                 </div>
             </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0 pomakni">
             @if (Auth::check())
-                <a  href="#" class="btn btn-light"  type="submit" style="margin-right:8px;">{{ Auth::user()->name }}</a>
-                <a  href="logout" class="btn btn-luksha" type="submit">Logout</a>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-luksha dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <div class="dropdown-menu" style="right: 0; left: auto;">
+                         <a class="dropdown-item" href="/public/post">Dodaj post</a>
+                        <a class="dropdown-item" href="/public/logout">Odjava</a>
+                    </div>
+                </div>
+
+
+
             @else
-                <a  href="login" class="btn btn-light"  type="submit" style="margin-right:8px;">Login</a>
-                <a  href="register" class="btn btn-luksha" type="submit">Register</a>
+                <a  href="/public/login" class="btn btn-light"  type="submit" style="margin-right:8px;">Login</a>
+                <a  href="/public/register" class="btn btn-luksha" type="submit">Register</a>
             @endif
 
         </form>

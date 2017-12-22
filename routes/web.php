@@ -16,12 +16,17 @@ use App\Logout;
 
 Route::get('/', 'PostController@index')->name('pocetna');
 
-Route::get('/users', function()
-{
-    return View('smece.users');
-});
 
 Route::get('/post/{id}', 'PostController@post');
+
+
+Route::post('/post', 'PostController@store')->middleware('auth');;
+
+Route::get('/post', function(){
+    return view('posts.create');
+})->middleware('auth');
+
+Route::post('/post/{post}/comments', 'CommentController@store')->middleware('auth');;
 
 Route::get('/logout', function(){
     Auth::logout();

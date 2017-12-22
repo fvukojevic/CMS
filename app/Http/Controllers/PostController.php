@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Collection;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -14,20 +16,59 @@ class PostController extends Controller
      *
      */
 
+    protected $guarded = ['id'];
+
     public function __construct(){
         $this->middleware('auth', ['except' => ['index', 'post']]);
     }
+
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::latest()->get();
+        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
 
-        return view('posts.post', compact('posts'));
+        if ($request = request(['month', 'year'])) {
+
+            $month =  \request('month');
+            $month = Carbon::parse($month)->month;
+            $year =  \request('year');
+
+            $posts = Post::whereMonth('created_at', $month)->whereYear('created_at', $year)->get();
+
+            return view('posts.post', compact('posts', 'archives'));
+        }
+
+        return view('posts.post', compact('posts', 'archives'));
     }
 
     public function post($id){
         $post = Post::findOrFail($id);
-        return view('posts.singlePost', compact('post'));
+
+        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
+
+        return view('posts.singlePost', compact('post', 'archives'));
     }
+
+    public function store(){
+
+        $post = new Post;
+
+        $this->validate(request(),[
+
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        $post->title = request('title');
+        $post->body = request('body');
+        $post->user_id = auth()->id();
+        $post->save();
+        //Post::create($post);
+
+        return redirect('/');
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,17 +77,6 @@ class PostController extends Controller
      */
     public function create()
     {
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
