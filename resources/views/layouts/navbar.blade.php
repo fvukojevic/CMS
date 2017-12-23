@@ -48,7 +48,7 @@
                         {{ Auth::user()->name }}
                     </button>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
-                         <a class="dropdown-item" href="/public/post">Dodaj post</a>
+                         <a class="dropdown-item" href="/public/create">Dodaj post</a>
                         <a class="dropdown-item" href="/public/logout">Odjava</a>
                     </div>
                 </div>

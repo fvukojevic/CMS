@@ -3,7 +3,7 @@
 
     <hr>
 
-    <form method="POST" action="<?php echo e(('post')); ?>">
+    <form method="POST" action="<?php echo e(('create')); ?>">
         <?php echo e(csrf_field()); ?>
 
         <div class="form-group">

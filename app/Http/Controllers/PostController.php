@@ -49,6 +49,13 @@ class PostController extends Controller
         return view('posts.singlePost', compact('post', 'archives'));
     }
 
+    public function create(){
+
+        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
+
+        return view('posts.create', compact('post', 'archives'));
+    }
+
     public function store(){
 
         $post = new Post;
@@ -69,15 +76,6 @@ class PostController extends Controller
 
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
 
     /**
      * Display the specified resource.

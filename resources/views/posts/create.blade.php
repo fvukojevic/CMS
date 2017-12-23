@@ -5,7 +5,7 @@
 
     <hr>
 
-    <form method="POST" action="{{('post')}}">
+    <form method="POST" action="{{('create')}}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Naslov: </label>
