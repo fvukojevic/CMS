@@ -24,7 +24,7 @@ class PostController extends Controller
 
     public function index()
     {
-        $posts = Post::latest()->get();
+        $posts = Post::latest()->paginate(5);
         $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
 
         if ($request = request(['month', 'year'])) {
@@ -33,7 +33,7 @@ class PostController extends Controller
             $month = Carbon::parse($month)->month;
             $year =  \request('year');
 
-            $posts = Post::whereMonth('created_at', $month)->whereYear('created_at', $year)->get();
+            $posts = Post::whereMonth('created_at', $month)->whereYear('created_at', $year)->paginate(5);
 
             return view('posts.post', compact('posts', 'archives'));
         }
