@@ -17,7 +17,9 @@ use App\Logout;
 Route::get('/', 'PostController@index')->name('pocetna');
 
 
-Route::get('/post/{id}', 'PostController@post');
+Route::get('/show/{id}', 'PostController@show');
+Route::get('/category/{category}','CategoryController@show');
+Route::get('/tags/{tag}','TagController@show');
 
 
 Route::post('/create', 'PostController@store')->middleware('auth');
@@ -27,7 +29,7 @@ Route::get('/post', function(){
     return view('posts.create');
 })->middleware('auth');
 
-Route::post('/post/{post}/comments', 'CommentController@store')->middleware('auth');
+Route::post('/show/{post}/comments', 'CommentController@store')->middleware('auth');
 
 Route::get('/logout', function(){
     Auth::logout();
