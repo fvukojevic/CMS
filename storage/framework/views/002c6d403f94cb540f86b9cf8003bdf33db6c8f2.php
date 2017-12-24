@@ -65,6 +65,35 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="/resources/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script>
+    $(document).ready(function()
+    {
+        var mode=false;
+        $('a[id="nightmodeID"]').click(function()
+        {
+            if(mode==false)
+            {
+                $('body').css('background','#142634');
+                $('body').css('color','#BDC7C1');
+                $('div[class="jumbotron"]').css('background','#142634');
+                $('hr').css('background','white');
+                $('nav').css('border-bottom','1px solid white');
+                $('footer').css('background','#142634');
+                $('ul[class="paginator"]').css('background','#142634');
+                mode=true;
+            }else
+            {
+                $('body').css('background','#fff');
+                $('body').css('color','black');
+                $('div[class="jumbotron"]').css('background','#e9ecef');
+                $('hr').css('background','grey');
+                $('nav').css('background','#343a40');
+                $('footer').css('background','#e9ecef');
+                mode=false;
+            }
+        });
+    })
+</script>
 <script src="/resources/assets/js/vendor/popper.min.js"></script>
 <script src="/resources/dist/js/bootstrap.min.js"></script>
 </body>

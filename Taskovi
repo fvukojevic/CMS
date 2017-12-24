@@ -7,7 +7,7 @@
 
 7. Uređivanje i prikaz vlastitog profila
 8. Prilagoditi login i register view ( sada su Laravelovi, a imamo svoje)
-9. Urediti paginator ( navigacija za stranice ( Nazad 1,2,3,4 Naprijed )
+
 10. Napraviti slider
 11. Napraviti view za uplaoad slika
 12. Napraviti kontroler za upload slika
@@ -19,6 +19,8 @@
 
 6. Pretraživanje po kategorijama - Mario
 5. Pretraživanje po tagovima ( logika ista kao za kategorije
+15. Dodan noćni mod
+9. Urediti paginator ( navigacija za stranice ( Nazad 1,2,3,4 Naprijed )
 
 ## FRONTEND-ADMIN PANEL ##
 Napraviti layout za admin panel, trebao bi imati dodavanje objava, kategorija, oznaka(tagova), dodavanje korisnika i uloga korisnika; nesto slicno kao na wp

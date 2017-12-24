@@ -48,9 +48,11 @@
                         <?php echo e(Auth::user()->name); ?>
 
                     </button>
+                    <a id="nightmodeID"><img class="nightmodeCLS"src="/resources/assets/img/brightness.png"></a>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
                          <a class="dropdown-item" href="/public/create">Dodaj post</a>
                         <a class="dropdown-item" href="/public/logout">Odjava</a>
+
                     </div>
                 </div>
 
@@ -59,6 +61,7 @@
             <?php else: ?>
                 <a  href="/public/login" class="btn btn-light"  type="submit" style="margin-right:8px;">Login</a>
                 <a  href="/public/register" class="btn btn-luksha" type="submit">Register</a>
+                <a id="nightmodeID" style="cursor:pointer;"><img class="nightmodeCLS"src="/resources/assets/img/brightness.png"></a>
             <?php endif; ?>
 
         </form>
