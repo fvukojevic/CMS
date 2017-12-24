@@ -18,16 +18,16 @@
                 <a class="nav-link" href="/public">Pocetna <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/public/post">Kategorija</a>
+                <a class="nav-link" href="/public/category/music">Music</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kategorija</a>
+                <a class="nav-link" href="/public/category/games">Games</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/public/post">Kategorija</a>
+                <a class="nav-link" href="/public/category/kids">Kids</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kategorija</a>
+                <a class="nav-link" href="/public/category/toys">Toys</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -49,7 +49,7 @@
 
                     </button>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
-                         <a class="dropdown-item" href="/public/post">Dodaj post</a>
+                         <a class="dropdown-item" href="/public/create">Dodaj post</a>
                         <a class="dropdown-item" href="/public/logout">Odjava</a>
                     </div>
                 </div>

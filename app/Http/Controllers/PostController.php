@@ -38,15 +38,22 @@ class PostController extends Controller
             return view('posts.post', compact('posts', 'archives'));
         }
 
-        return view('posts.post', compact('posts', 'archives'));
+        return view('posts.index', compact('posts', 'archives'));
     }
 
-    public function post($id){
+    public function show($id){
         $post = Post::findOrFail($id);
+
+        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->orderBy('year', 'desc')->get()->toArray();
+
+        return view('posts.singlePost', compact('post', 'archives'));
+    }
+
+    public function create(){
 
         $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
 
-        return view('posts.singlePost', compact('post', 'archives'));
+        return view('posts.create', compact('post', 'archives'));
     }
 
     public function store(){
@@ -69,26 +76,6 @@ class PostController extends Controller
 
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.

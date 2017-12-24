@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-        <ul class="pagination justify-content-center">
+    <ul class="pagination justify-content-center">
 
         {{-- Znaci ako je na prvoj stranici da islkuci link da se ne moze klikut, inace dodaj link u href, ovo nazad zamjeni necim, ruzn o je ovako, skotaj nesto}}
         {{-- Previous Page Link --}}
@@ -21,7 +21,7 @@
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     {{-- ako je na trenutnoj stranici iskljuci da se moze kliknut na nju, ovo $page ti je varijabla stranice, znaci nju ugradjujes u sta hoces, samo da lipo izgleda --}}
-                {{-- $url je url od trenutne stranice, vadi ih for petljom iz svih mogucih stranica; znaci uzima broj stranice i url --}}
+                    {{-- $url je url od trenutne stranice, vadi ih for petljom iz svih mogucih stranica; znaci uzima broj stranice i url --}}
                     @if ($page == $paginator->currentPage())
                         <li class="page-item active"><a class="page-link">{{ $page }}</a></li>
                     @else

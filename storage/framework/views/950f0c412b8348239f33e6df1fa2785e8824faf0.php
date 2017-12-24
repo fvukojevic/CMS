@@ -1,5 +1,5 @@
 <?php if($paginator->hasPages()): ?>
-        <ul class="pagination justify-content-center">
+    <ul class="pagination justify-content-center">
 
         
         <?php if($paginator->onFirstPage()): ?>
@@ -19,7 +19,7 @@
             <?php if(is_array($element)): ?>
                 <?php $__currentLoopData = $element; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page => $url): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     
-                
+                    
                     <?php if($page == $paginator->currentPage()): ?>
                         <li class="page-item active"><a class="page-link"><?php echo e($page); ?></a></li>
                     <?php else: ?>
