@@ -40,27 +40,26 @@
 
         </ul>
         <form class="form-inline my-2 my-lg-0 pomakni">
-            @if (Auth::check())
+            <?php if(Auth::check()): ?>
 
                 <div class="btn-group">
                     <button type="button" class="btn btn-luksha dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                        {{ Auth::user()->name }}
+                        <?php echo e(Auth::user()->name); ?>
+
                     </button>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
                          <a class="dropdown-item" href="/public/post">Dodaj post</a>
                         <a class="dropdown-item" href="/public/logout">Odjava</a>
-                        <a id="nightmodeID"></a>
                     </div>
                 </div>
 
 
 
-            @else
+            <?php else: ?>
                 <a  href="/public/login" class="btn btn-light"  type="submit" style="margin-right:8px;">Login</a>
                 <a  href="/public/register" class="btn btn-luksha" type="submit">Register</a>
-                <a id="nightmodeID" style="cursor:pointer;"><img class="nightmodeCLS"src="/resources/assets/img/brightness.png"></a>
-            @endif
+            <?php endif; ?>
 
         </form>
     </div>

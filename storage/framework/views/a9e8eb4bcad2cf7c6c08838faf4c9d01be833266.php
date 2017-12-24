@@ -1,4 +1,4 @@
-<html lang="{{ app()->getLocale() }}">
+<html lang="<?php echo e(app()->getLocale()); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,9 +21,9 @@
 
 <body>
 
-@include('layouts.navbar')
+<?php echo $__env->make('layouts.navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-@include('layouts.header')
+<?php echo $__env->make('layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 <hr>
 
@@ -34,7 +34,7 @@
 
             <!-- SADRZAJ -->
             <div class="col-sm-8">
-                @yield('content')
+                <?php echo $__env->yieldContent('content'); ?>
             </div>
             <!-- KRAJ -->
 
@@ -42,11 +42,11 @@
             <div class="col-sm-4">
                 <div class="jumbotron" style="padding-top:15px;">
                     <aside>
-                        @include('sidebar.socialNetworks')
+                        <?php echo $__env->make('sidebar.socialNetworks', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                         <hr>
-                        @include('sidebar.archive')
+                        <?php echo $__env->make('sidebar.archive', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                         <hr>
-                        @include('sidebar.test')
+                        <?php echo $__env->make('sidebar.test', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                     </aside>
                 </div>
             </div>
@@ -57,7 +57,7 @@
 
 </main> <!-- KRAJ MAINA -->
 
-@include('layouts.footer')
+<?php echo $__env->make('layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
 <!-- Bootstrap core JavaScript
