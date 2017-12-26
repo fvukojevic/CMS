@@ -19,7 +19,7 @@ class PostController extends Controller
     protected $guarded = ['id'];
 
     public function __construct(){
-        $this->middleware('auth', ['except' => ['index', 'post']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     public function index()

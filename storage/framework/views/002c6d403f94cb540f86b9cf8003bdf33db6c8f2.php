@@ -10,10 +10,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="/resources/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/dist/css/bootstrap.css" rel="stylesheet">
     <link href="/resources/dist/css/bootstrap-grid.css" rel="stylesheet">
     <link href="/resources/dist/css/bootstrap-grid.min.css" rel="stylesheet">
     <link href="/resources/dist/css/bootstrap-reboot.css" rel="stylesheet">
     <link href="/resources/dist/css/bootstrap-reboot.min.css" rel="stylesheet">
+
 
     <!-- CSS za FSRCMS -->
     <link href="/resources/fsrcms.css" rel="stylesheet">
