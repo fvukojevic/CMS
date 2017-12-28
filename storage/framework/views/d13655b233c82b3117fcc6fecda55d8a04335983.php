@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('css/btn.css')); ?>" rel = "stylesheet">
 </head>
 <body>
     <div id="app">
@@ -29,8 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                        <?php echo e(config('app.name', 'Laravel')); ?>
-
+                        FSR-CMS
                     </a>
                 </div>
 

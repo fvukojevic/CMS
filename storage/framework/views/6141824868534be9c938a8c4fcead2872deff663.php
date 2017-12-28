@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading login-class">Login</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="<?php echo e(route('login')); ?>">
@@ -14,7 +14,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="<?php echo e(old('email')); ?>" placeholder="E-mail" required autofocus>
 
                                 <?php if($errors->has('email')): ?>
                                     <span class="help-block">
@@ -28,7 +28,7 @@
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
 
                                 <?php if($errors->has('password')): ?>
                                     <span class="help-block">
@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-luksha">
                                     Login
                                 </button>
 
