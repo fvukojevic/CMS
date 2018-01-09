@@ -44,3 +44,7 @@ Route::get('/logout', function(){
 
 Auth::routes();
 
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/posts', 'AdminController@posts');
+Route::get('/admin/users', 'AdminController@users');
+
