@@ -78,7 +78,6 @@
                                     <th>Datum Objave</th>
                                     <th>Status</th>
                                     <th>Autor</th>
-                                    <th>Komentar</th>
                                     <th>Upravljanje</th>
                                 </tr>
                                 @foreach($posts as $post)
@@ -88,7 +87,7 @@
                                     <td>{{ $post->created_at->diffForHumans() }}</td>
                                     <td><span class="label label-success">OBJAVLJENO</span></td>
                                     <td>{{ $post->user->name }}</td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+
                                     <td><span class="label label-warning">UREDI</span>
                                         <span class="label label-danger">OBRIŠI</span></td>
                                 </tr>
@@ -99,7 +98,7 @@
                                     <td>9-1-2018</td>
                                     <td><span class="label label-danger">OBRISANO</span></td>
                                     <td> Luka Bjelica </td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+
                                     <td><span class="label label-warning">UREDI</span>
                                         <span class="label label-danger">OBRIŠI</span></td>
                                 </tr>

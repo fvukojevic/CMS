@@ -15,8 +15,10 @@
 
     <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
 
-
+    <link rel="stylesheet" href="/public/plugins/iCheck/all.css">
     <link rel="stylesheet" href="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -104,58 +106,22 @@
                                         </div>
                                         <input type="text" id="title" name="title" class="form-control">
                                     </div>
-                                    <select name="categories_id[]" multiple>
+
+                                    <div class="form-group">
+                                         Kategorije:
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            <label>
+                                                <input type="checkbox"value="{{ $category->id }}" class="flat-red">
+                                                <span class="label label-warning" style="padding-top: 5px"> {{ $category->name }}</span>
+                                            </label>
                                         @endforeach
-                                    </select>
-                                    <section class="invoice"><h5> Dodali ste: </h5>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-warning">DODAN TAG <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                    </section>
 
-                                    <section class="invoice"><h5> Aktivni TAGOVI: </h5>
-                                        <span class="label label-success">AUTOMOBILI <i class="fa fa-times"
-                                                                                        aria-hidden="true"></i></span>
-                                        <span class="label label-success">ZIVOTINJE <i class="fa fa-times"
-                                                                                       aria-hidden="true"></i></span>
-                                        <span class="label label-success">SVIJET <i class="fa fa-times" aria-hidden="true"></i></span>
-                                        <span class="label label-success">POLITIKA <i class="fa fa-times"
-                                                                                      aria-hidden="true"></i></span>
-                                        <span class="label label-success">CRNA KRONIKA <i class="fa fa-times"
-                                                                                          aria-hidden="true"></i></span>
-                                        <span class="label label-success">FITNESS <i class="fa fa-times" aria-hidden="true"></i></span>
-                                        <span class="label label-success">SKOLA <i class="fa fa-times"
-                                                                                   aria-hidden="true"></i></span>
-                                        <span class="label label-success">TECHNO <i class="fa fa-times" aria-hidden="true"></i></span>
-                                        <span class="label label-success">PROGRAMIRANJE <i class="fa fa-times"
-                                                                                           aria-hidden="true"></i></span>
-                                        <span class="label label-success">WEB <i class="fa fa-times"
-                                                                                 aria-hidden="true"></i></span>
-                                        <span class="label label-success">JAVA <i class="fa fa-times"
-                                                                                  aria-hidden="true"></i></span>
-                                        <span class="label label-success">CSS <i class="fa fa-times"
-                                                                                 aria-hidden="true"></i></span>
+                                    </div>
 
-                                    </section>
+
+
+
+
                                     <textarea id="editor1" name="body" rows="10" cols="80">
                                             Tekst koji ćete vi promjeniti da bi napisali novu objavu.
                                     </textarea>
