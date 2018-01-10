@@ -21,10 +21,10 @@
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php endif; ?>
                 </p>
-                    <p>
-                        <?php echo e(str_limit($post->body, 500)); ?>
+                    <div class="kldfjlf">
+                        <?php echo str_limit($post->body, 500); ?>
 
-                    </p>
+                    </div>
             </div>
             <hr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

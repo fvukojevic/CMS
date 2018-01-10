@@ -5,17 +5,17 @@
     <title>RWA | Admin Panel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,51 +33,7 @@
 <div class="wrapper">
 
 @include('admin.header')
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p>Luka Bjelica</p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-
-
-
-            <!-- Sidebar Menu -->
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">NAVIGACIJA</li>
-                <!-- Optionally, you can add icons to the links -->
-                <li><a href="/public/admin"><i class="fa fa-home"></i> <span>Pocetna</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
-                <li class="treeview">
-                    <a href="objave.html">
-                        <i class="fa fa-files-o"></i>
-                        <span>Objave</span>
-
-                    </a>
-                    <ul class="treeview-menu">
-
-                        <li ><a href="/public/admin/posts"><i class="fa fa-file"></i> <span>Sve Objave</span></a></li>
-                        <li ><a href="dodaj_objavu.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Objavu</span></a></li>
-                        <li ><a href="dodaj_kategoriju.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Kategoriju</span></a></li>
-                        <li ><a href="dodaj_tag.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Tag</span></a></li>
-                    </ul>
-                </li>
-            </ul>
-            <!-- /.sidebar-menu -->
-        </section>
-        <!-- /.sidebar -->
-    </aside>
+@include('admin.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -88,7 +44,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="../Pocetna.html"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li class="active">Korisnici</li>
             </ol>
         </section>

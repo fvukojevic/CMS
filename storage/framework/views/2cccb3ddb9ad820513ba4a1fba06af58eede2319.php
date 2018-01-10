@@ -4,8 +4,7 @@
 
     <hr>
 
-    <?php echo e($post->body); ?>
-
+    <?php echo $post->body; ?> 
 
     <hr>
 

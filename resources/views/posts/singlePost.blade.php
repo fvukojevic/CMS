@@ -6,7 +6,7 @@
 
     <hr>
 
-    {{ $post->body }}
+    {!! $post->body !!}
 
     <hr>
 

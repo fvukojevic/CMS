@@ -5,17 +5,17 @@
     <title>RWA | Admin Panel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="../dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,20 +33,55 @@
 <div class="wrapper">
 
     <!-- Main Header -->
-@include('admin.header')
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>RWA</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>RWA </b>AdminPanel</span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+
+                    <li>
+
+                        <a href="#" class="btn btn-danger btn-flat">Odjava</a>
+
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
 @include('admin.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Objave
+                Kategorije
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="../Pocetna.html"><i class="fa fa-dashboard"></i> Pocetak</a></li>
-                <li class="active">Objave</li>
+                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li>Objave</li>
+                <li class="active">Dodaj Kategoriju</li>
             </ol>
         </section>
 
@@ -55,18 +90,20 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="box">
+                    <div class="box box-primary">
                         <div class="box-header">
-                            <h3 class="box-title">Pregled svih objava u našoj bazi.</h3>
+                            <form method="POST" action="{{('/public/ctg/create')}}">
+                                {{ csrf_field() }}
+                                <div class="input-group margin">
+                                    <div class="input-group-btn">
+                                        <button type="submit" class="btn btn-warning">DODAJ KATEGORIJU</button>
+                                    </div>
+                                    <input type="text" id="dodaj_kategoriju" name="name" class="form-control">
+                                </div>
+                            </form>
 
                             <div class="box-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -74,20 +111,18 @@
                             <table class="table table-hover">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Naslov</th>
-                                    <th>Datum Objave</th>
+                                    <th>Naziv</th>
+
                                     <th>Status</th>
-                                    <th>Autor</th>
-                                    <th>Komentar</th>
+                                    <th>Opis</th>
                                     <th>Upravljanje</th>
                                 </tr>
-                                @foreach($posts as $post)
+                                @foreach($categories as $category)
                                 <tr>
-                                    <td>{{ $post->id }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->created_at->diffForHumans() }}</td>
-                                    <td><span class="label label-success">OBJAVLJENO</span></td>
-                                    <td>{{ $post->user->name }}</td>
+                                    <td>{{$category->id}}</td>
+                                    <td>{{$category->name}}</td>
+
+                                    <td><span class="label label-success">AKTIVNA</span></td>
                                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                                     <td><span class="label label-warning">UREDI</span>
                                         <span class="label label-danger">OBRIŠI</span></td>
@@ -95,10 +130,9 @@
                                 @endforeach
                                 <tr>
                                     <td>5</td>
-                                    <td>Neki Naslov #333</td>
-                                    <td>9-1-2018</td>
-                                    <td><span class="label label-danger">OBRISANO</span></td>
-                                    <td> Luka Bjelica </td>
+                                    <td>ZEMLJA</td>
+
+                                    <td><span class="label label-warning">NIJE SPREMLJENO</span></td>
                                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                                     <td><span class="label label-warning">UREDI</span>
                                         <span class="label label-danger">OBRIŠI</span></td>
@@ -111,9 +145,14 @@
                 </div>
             </div>
 
+            <div class="pull-right">
+                <button class="btn btn-success">SPREMI SVE</button>
 
+            </div>
         </section>
         <!-- /.content -->
+
+
     </div>
     <!-- /.content-wrapper -->
 
@@ -128,18 +167,17 @@
     </footer>
 
 
-
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../dist/js/adminlte.min.js"></script>
+<script src="/public/dist/js/adminlte.min.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

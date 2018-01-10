@@ -34,7 +34,7 @@ class TagController extends Controller
         $tag->save();
         //Post::create($post);
 
-        return redirect('/');
+        return back();
 
     }
 

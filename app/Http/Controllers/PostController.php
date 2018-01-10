@@ -66,13 +66,14 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
+        $request = request('categories_id');
         $post->title = request('title');
         $post->body = request('body');
         $post->user_id = auth()->id();
         $post->save();
-        //Post::create($post);
+        $post->categories()->attach($request);
 
-        return redirect('/');
+        return back();
 
     }
 

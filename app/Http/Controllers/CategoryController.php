@@ -34,7 +34,7 @@ class CategoryController extends Controller
         $category->save();
         //Post::create($post);
 
-        return redirect('/');
+        return back();
 
     }
 }

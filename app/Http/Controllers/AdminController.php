@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Post;
 use App\Comment;
 use App\User;
+use App\Tag;
 
 class AdminController extends Controller
 {
@@ -27,5 +28,20 @@ class AdminController extends Controller
     public function users(){
         $users = User::get()->all();
         return view('admin.users', compact('users'));
+    }
+
+    public function addpost(){
+        $categories = Category::get()->all();
+        return view('admin.addpost', compact('categories'));
+    }
+
+    public function addtag(){
+        $tags = Tag::get()->all();
+        return view('admin.addtag', compact('tags'));
+    }
+
+    public function addcategory(){
+        $categories = Category::get()->all();
+        return view('admin.addcategory', compact('categories'));
     }
 }

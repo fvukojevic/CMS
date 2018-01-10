@@ -29,6 +29,7 @@ class Post extends Model
         $comment->save();
 
     }
+    
 
     public function categories(){
         return $this->belongsToMany(Category::class);

@@ -23,9 +23,9 @@
                         @endforeach
                     @endif
                 </p>
-                    <p>
-                        {{  str_limit($post->body, 500) }}
-                    </p>
+                    <div class="kldfjlf">
+                        {!!  str_limit($post->body, 500) !!}
+                    </div>
             </div>
             <hr>
         @endforeach
