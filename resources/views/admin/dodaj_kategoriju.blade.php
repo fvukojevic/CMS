@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <head>
     <meta charset="utf-8">
@@ -33,7 +38,45 @@
 <div class="wrapper">
 
     <!-- Main Header -->
-@include('admin.header')
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>RWA</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>RWA </b>AdminPanel</span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+
+
+
+
+
+                    <li>
+
+                        <a href="#" class="btn btn-danger btn-flat">Odjava</a>
+
+                    </li>
+
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
 
@@ -58,8 +101,8 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">NAVIGACIJA</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li><a href="/public/admin"><i class="fa fa-home"></i> <span>Pocetna</span></a></li>
-                <li><a href="/public/admin/users"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
+                <li><a href="../Pocetna.html"><i class="fa fa-home"></i> <span>Pocetna</span></a></li>
+                <li><a href="korisnici.html"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
                 <li class="treeview active">
                     <a href="objave.html">
                         <i class="fa fa-files-o"></i>
@@ -68,9 +111,9 @@
                     </a>
                     <ul class="treeview-menu">
 
-                        <li class="active"><a href="#"><i class="fa fa-file"></i> <span>Sve Objave</span></a></li>
+                        <li ><a href="objave.html"><i class="fa fa-file"></i> <span>Sve Objave</span></a></li>
                         <li ><a href="dodaj_objavu.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Objavu</span></a></li>
-                        <li ><a href="dodaj_kategoriju.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Kategoriju</span></a></li>
+                        <li class="active"><a href="dodaj_kategoriju.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Kategoriju</span></a></li>
                         <li ><a href="dodaj_tag.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Tag</span></a></li>
                     </ul>
                 </li>
@@ -85,12 +128,13 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Objave
+                Kategorije
 
             </h1>
             <ol class="breadcrumb">
                 <li><a href="../Pocetna.html"><i class="fa fa-dashboard"></i> Pocetak</a></li>
-                <li class="active">Objave</li>
+                <li>Objave</li>
+                <li class="active">Dodaj Kategoriju</li>
             </ol>
         </section>
 
@@ -99,18 +143,18 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="box">
+                    <div class="box box-primary">
                         <div class="box-header">
-                            <h3 class="box-title">Pregled svih objava u našoj bazi.</h3>
+                            <div class="input-group margin">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-warning">DODAJ KATEGORIJU</button>
+                                </div>
+                                <input type="text" id="dodaj_kategoriju" class="form-control"> <!-- Ovaj je input za Kategoriju -->
+
+                            </div>
 
                             <div class="box-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -118,30 +162,68 @@
                             <table class="table table-hover">
                                 <tr>
                                     <th>ID</th>
-                                    <th>Naslov</th>
-                                    <th>Datum Objave</th>
+                                    <th>Naziv</th>
+
                                     <th>Status</th>
                                     <th>Autor</th>
-                                    <th>Komentar</th>
+                                    <th>Opis</th>
                                     <th>Upravljanje</th>
                                 </tr>
-                                @foreach($posts as $post)
                                 <tr>
-                                    <td>{{ $post->id }}</td>
-                                    <td>{{ $post->title }}</td>
-                                    <td>{{ $post->created_at->diffForHumans() }}</td>
-                                    <td><span class="label label-success">OBJAVLJENO</span></td>
-                                    <td>{{ $post->user->name }}</td>
+                                    <td>0</td>
+                                    <td>MUŠKARCI</td>
+
+                                    <td><span class="label label-success">AKTIVNA</span></td>
+                                    <td> Luka Bjelica </td>
                                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                                     <td><span class="label label-warning">UREDI</span>
                                         <span class="label label-danger">OBRIŠI</span></td>
                                 </tr>
-                                @endforeach
+                                <tr>
+                                    <td>1</td>
+                                    <td>ŽENE</td>
+
+                                    <td><span class="label label-success">AKTIVNA</span></td>
+                                    <td> Luka Bjelica </td>
+                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                    <td><span class="label label-warning">UREDI</span>
+                                        <span class="label label-danger">OBRIŠI</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>LJUDI</td>
+
+                                    <td><span class="label label-warning">NIJE SPREMLJENO</span></td>
+                                    <td> Luka Bjelica </td>
+                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                    <td><span class="label label-warning">UREDI</span>
+                                        <span class="label label-danger">OBRIŠI</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>AUTOMOBILI</td>
+
+                                    <td><span class="label label-warning">NIJE SPREMLJENO</span></td>
+                                    <td> Luka Bjelica </td>
+                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                    <td><span class="label label-warning">UREDI</span>
+                                        <span class="label label-danger">OBRIŠI</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>ŽIVOTINJE</td>
+
+                                    <td><span class="label label-warning">NIJE SPREMLJENO</span></td>
+                                    <td> Luka Bjelica </td>
+                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                    <td><span class="label label-warning">UREDI</span>
+                                        <span class="label label-danger">OBRIŠI</span></td>
+                                </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>Neki Naslov #333</td>
-                                    <td>9-1-2018</td>
-                                    <td><span class="label label-danger">OBRISANO</span></td>
+                                    <td>ZEMLJA</td>
+
+                                    <td><span class="label label-warning">NIJE SPREMLJENO</span></td>
                                     <td> Luka Bjelica </td>
                                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                                     <td><span class="label label-warning">UREDI</span>
@@ -155,9 +237,14 @@
                 </div>
             </div>
 
+            <div class="pull-right">
+                <button class="btn btn-success">SPREMI SVE</button>
 
+            </div>
         </section>
         <!-- /.content -->
+
+
     </div>
     <!-- /.content-wrapper -->
 

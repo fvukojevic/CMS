@@ -57,9 +57,22 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">NAVIGACIJA</li>
                 <!-- Optionally, you can add icons to the links -->
-                <li><a href="/public/admin"><i class="fa fa-link"></i> <span>Pocetna</span></a></li>
-                <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Korisnici</span></a></li>
-                <li ><a href="/public/admin/posts"><i class="fa fa-link"></i> <span>Objave</span></a></li>
+                <li><a href="/public/admin"><i class="fa fa-home"></i> <span>Pocetna</span></a></li>
+                <li class="active"><a href="#"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
+                <li class="treeview">
+                    <a href="objave.html">
+                        <i class="fa fa-files-o"></i>
+                        <span>Objave</span>
+
+                    </a>
+                    <ul class="treeview-menu">
+
+                        <li ><a href="/public/admin/posts"><i class="fa fa-file"></i> <span>Sve Objave</span></a></li>
+                        <li ><a href="dodaj_objavu.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Objavu</span></a></li>
+                        <li ><a href="dodaj_kategoriju.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Kategoriju</span></a></li>
+                        <li ><a href="dodaj_tag.html"><i class="fa fa-plus-circle"></i> <span>Dodaj Tag</span></a></li>
+                    </ul>
+                </li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

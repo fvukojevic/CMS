@@ -49,6 +49,7 @@
                     </button>
                     <a id="nightmodeID"><img class="nightmodeCLS"src="/resources/assets/img/brightness.png"></a>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
+                        <a class="dropdown-item" href="/public/admin">ADMIN PANEL</a>
                          <a class="dropdown-item" href="/public/create">Dodaj post</a>
                          <a class="dropdown-item" href="/public/tag/create">Dodaj tag</a>
                         <a class="dropdown-item" href="/public/ctg/create">Dodaj kategoriju</a>
