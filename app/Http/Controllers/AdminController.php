@@ -32,7 +32,8 @@ class AdminController extends Controller
 
     public function addpost(){
         $categories = Category::get()->all();
-        return view('admin.addpost', compact('categories'));
+        $tags = Tag::get()->all();
+        return view('admin.addpost', compact('categories', 'tags'));
     }
 
     public function addtag(){

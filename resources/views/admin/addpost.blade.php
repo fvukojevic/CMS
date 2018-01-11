@@ -111,7 +111,7 @@
                                          Kategorije:
                                         @foreach ($categories as $category)
                                             <label>
-                                                <input type="checkbox"value="{{ $category->id }}" class="flat-red">
+                                                <input type="checkbox" value="{{ $category->id }}" name="categories[]" class="flat-red">
                                                 <span class="label label-warning" style="padding-top: 5px"> {{ $category->name }}</span>
                                             </label>
                                         @endforeach
@@ -145,10 +145,10 @@
                         <div class="box-body">
                             <div class="form-group">
 
-                                @foreach ($categories as $category)
+                                @foreach ($tags as $tag)
                                     <label>
-                                        <input type="checkbox"value="{{ $category->id }}" class="flat-red">
-                                        <span class="label label-warning" style="padding-top: 5px"> {{ $category->name }}</span>
+                                        <input type="checkbox" value="{{ $tag->id }}" name="tags[]" class="flat-red">
+                                        <span class="label label-warning" style="padding-top: 5px"> {{ $tag->name }}</span>
                                     </label>
                                 @endforeach
 

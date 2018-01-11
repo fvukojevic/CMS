@@ -66,12 +66,14 @@ class PostController extends Controller
             'body' => 'required'
         ]);
 
-        $request = request('categories_id');
+        $requestCategory = request('categories');
+        $requestTag = request('tags');
         $post->title = request('title');
         $post->body = request('body');
         $post->user_id = auth()->id();
         $post->save();
-        $post->categories()->attach($request);
+        $post->categories()->attach($requestCategory);
+        $post->tags()->attach($requestTag);
 
         return back();
 
