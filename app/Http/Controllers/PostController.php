@@ -67,7 +67,7 @@ class PostController extends Controller
         ]);
 
         $requestCategory = request('categories');
-        $requestTag = request('tags');
+        $requestTag = request('selectedtags');
         $post->title = request('title');
         $post->body = request('body');
         $post->user_id = auth()->id();
