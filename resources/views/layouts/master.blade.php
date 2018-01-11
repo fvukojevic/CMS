@@ -44,11 +44,11 @@
             <div class="col-sm-4">
                 <div class="jumbotron" style="padding-top:15px;">
                     <aside>
-                        @include('sidebar.socialNetworks')
+                        @include('sidebar.categories')
                         <hr>
                         @include('sidebar.archive')
                         <hr>
-                        @include('sidebar.test')
+                        @include('sidebar.socialNetworks')
                     </aside>
                 </div>
             </div>

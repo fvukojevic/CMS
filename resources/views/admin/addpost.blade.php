@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
 
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -91,15 +90,13 @@
 
         <section class="content">
             <div class="row">
-
-
-                <div class="col-md-10">
-                    <div class="box box-primary">
-                        <div class="box-header">
-                            <!-- /.box-header -->
-                            <div class="box-body pad">
-                                <form method="POST" action="/public/create">
-                                    {{ csrf_field() }}
+                <form method="POST" action="/public/create">
+                    {{ csrf_field() }}
+                    <div class="col-md-10">
+                        <div class="box box-primary">
+                            <div class="box-header">
+                                <!-- /.box-header -->
+                                <div class="box-body pad">
                                     <div class="input-group margin">
                                         <div class="input-group-btn">
                                             <button type="button" class="btn btn-warning">Naslov</button>
@@ -108,18 +105,17 @@
                                     </div>
 
                                     <div class="form-group">
-                                         Kategorije:
+                                        Kategorije:
                                         @foreach ($categories as $category)
                                             <label>
-                                                <input type="checkbox" value="{{ $category->id }}" name="categories[]" class="flat-red">
-                                                <span class="label label-warning" style="padding-top: 5px"> {{ $category->name }}</span>
+                                                <input type="checkbox" value="{{ $category->id }}" name="categories[]"
+                                                       class="flat-red">
+                                                <span class="label label-warning"
+                                                      style="padding-top: 5px"> {{ $category->name }}</span>
                                             </label>
                                         @endforeach
 
                                     </div>
-
-
-
 
 
                                     <textarea id="editor1" name="body" rows="10" cols="80">
@@ -132,31 +128,34 @@
                                             <button class="btn btn-danger"> OBRIŠI</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+                            </div>
+                            <!-- /.box -->
+                        </div>
+                        <!-- /.col-->
+                    </div>
+                    <div class="col-md-2">
+                        <div class="box box-primary">
+                            <div class="box-header"><h3> TAGOVI </h3><span class="small">Odaberite odgovarajuće tagove za vašu objavu.</span>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+
+                                    @foreach ($tags as $tag)
+                                        <label>
+                                            <input type="checkbox" value="{{ $tag->id }}" name="selectedtags[]"
+                                                   class="flat-red">
+                                            <span class="label label-warning"
+                                                  style="padding-top: 5px"> {{ $tag->name }}</span>
+                                        </label>
+                                    @endforeach
+
+                                </div>
                             </div>
                         </div>
-                        <!-- /.box -->
+
                     </div>
-                    <!-- /.col-->
-                </div>
-                <div class="col-md-2">
-                    <div class="box box-primary">
-                        <div class="box-header"><h3> TAGOVI </h3><span class="small">Odaberite odgovarajuće tagove za vašu objavu.</span></div>
-                        <div class="box-body">
-                            <div class="form-group">
-
-                                @foreach ($tags as $tag)
-                                    <label>
-                                        <input type="checkbox" value="{{ $tag->id }}" name="tags[]" class="flat-red">
-                                        <span class="label label-warning" style="padding-top: 5px"> {{ $tag->name }}</span>
-                                    </label>
-                                @endforeach
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                </form>
                 <!-- ./row -->
             </div>
         </section>
@@ -210,7 +209,6 @@
         $('.textarea').wysihtml5()
     })
 </script>
-
 
 
 </body>

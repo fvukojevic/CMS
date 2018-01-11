@@ -1,8 +1,8 @@
 <div class="sidebar-module">
-    <h4>Elsewhere</h4>
+    <h4>Kategorije</h4>
     <ol class="list-unstyled">
-        <li><a href="#">GitHub</a></li>
-        <li><a href="#">Twitter</a></li>
-        <li><a href="#">Facebook</a></li>
+        <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <li><a href="/public/category/<?php echo e($category->name); ?>"> <?php echo e($category->name); ?> </a></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </ol>
 </div>

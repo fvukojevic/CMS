@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -25,7 +26,6 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::latest()->paginate(5);
-        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
 
         if ($request = request(['month', 'year'])) {
 
@@ -35,25 +35,22 @@ class PostController extends Controller
 
             $posts = Post::whereMonth('created_at', $month)->whereYear('created_at', $year)->paginate(5);
 
-            return view('posts.index', compact('posts', 'archives'));
+            return view('posts.index', compact('posts'));
         }
 
-        return view('posts.index', compact('posts', 'archives'));
+        return view('posts.index', compact('posts'));
     }
 
     public function show($id){
+
         $post = Post::findOrFail($id);
 
-        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->orderBy('year', 'desc')->get()->toArray();
-
-        return view('posts.singlePost', compact('post', 'archives'));
+        return view('posts.singlePost', compact('post'));
     }
 
     public function create(){
 
-        $archives = Post::selectRaw('year(created_at) year, monthname(created_at) month, count(*) published')->groupBy('year','month')->get()->toArray();
-
-        return view('posts.create', compact('post', 'archives'));
+        return view('posts.create', compact('post'));
     }
 
     public function store(){
@@ -107,6 +104,8 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
         $post->delete();
+
+        Session::flash('message', 'Objava uklonjena!');
         return back();
 
     }

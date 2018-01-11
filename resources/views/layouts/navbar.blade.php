@@ -7,7 +7,8 @@
             </div>
         </div>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -15,22 +16,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/public">Pocetna <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/public">Početna <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/public/category/music">Music</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/public/category/games">Games</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/public/category/kids">Kids</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/public/category/toys">Toys</a>
-            </li>
+            @foreach($menuCategories as $menuCategory)
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/category/{{ $menuCategory->name }}">{{ $menuCategory->name }}</a>
+                </li>
+            @endforeach
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle"  id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="#">Kategorija</a>
                     <a class="dropdown-item" href="#">Kategorija</a>
@@ -47,12 +42,9 @@
                             aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </button>
-                    <a id="nightmodeID"><img class="nightmodeCLS"src="/resources/assets/img/brightness.png"></a>
+                    <a id="nightmodeID"><img class="nightmodeCLS" src="/resources/assets/img/brightness.png"></a>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
-                        <a class="dropdown-item" href="/public/admin">ADMIN PANEL</a>
-                         <a class="dropdown-item" href="/public/create">Dodaj post</a>
-                         <a class="dropdown-item" href="/public/tag/create">Dodaj tag</a>
-                        <a class="dropdown-item" href="/public/ctg/create">Dodaj kategoriju</a>
+                        <a class="dropdown-item" href="/public/admin">Administracija</a>
                         <a class="dropdown-item" href="/public/logout">Odjava</a>
 
                     </div>
@@ -61,9 +53,10 @@
 
 
             @else
-                <a  href="/public/login" class="btn btn-light"  type="submit" style="margin-right:8px;">Login</a>
-                <a  href="/public/register" class="btn btn-luksha" type="submit">Register</a>
-                <a id="nightmodeID" style="cursor:pointer;"><img class="nightmodeCLS"src="/resources/assets/img/brightness.png"></a>
+                <a href="/public/login" class="btn btn-light" type="submit" style="margin-right:8px;">Login</a>
+                <a href="/public/register" class="btn btn-luksha" type="submit">Register</a>
+                <a id="nightmodeID" style="cursor:pointer;"><img class="nightmodeCLS"
+                                                                 src="/resources/assets/img/brightness.png"></a>
             @endif
 
         </form>

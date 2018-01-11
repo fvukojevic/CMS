@@ -1,5 +1,5 @@
 <div class="sidebar-module">
-    <h4>Elsewhere</h4>
+    <h4>Društvene mreže</h4>
     <ol class="list-unstyled">
         <li><a href="#">GitHub</a></li>
         <li><a href="#">Twitter</a></li>
