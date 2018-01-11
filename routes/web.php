@@ -24,12 +24,15 @@ Route::get('/tags/{tag}','TagController@show');
 
 Route::post('/create', 'PostController@store')->middleware('auth');
 Route::get('/create', 'PostController@create')->middleware('auth');
+Route::get('/post/delete/{id}', 'PostController@destroy');
 
 Route::post('/tag/create', 'TagController@store')->middleware('auth');
 Route::get('/tag/create', 'TagController@create')->middleware('auth');
+Route::get('/tag/delete/{id}', 'TagController@destroy')->middleware('auth');
 
 Route::post('/ctg/create', 'CategoryController@store')->middleware('auth');
 Route::get('/ctg/create', 'CategoryController@create')->middleware('auth');
+Route::get('/ctg/delete/{id}', 'CategoryController@destroy')->middleware('auth');
 
 Route::get('/post', function(){
     return view('posts.create');

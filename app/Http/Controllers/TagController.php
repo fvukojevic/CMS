@@ -38,4 +38,12 @@ class TagController extends Controller
 
     }
 
+    public function destroy($id)
+    {
+        $tag = Tag::findOrFail($id);
+        $tag->delete();
+        return back();
+
+    }
+
 }

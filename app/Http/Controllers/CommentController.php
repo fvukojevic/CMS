@@ -13,4 +13,12 @@ class CommentController extends Controller
         $post->addComment(request('body'));
         return back();
     }
+
+    public function destroy($id)
+    {
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+        return back();
+
+    }
 }

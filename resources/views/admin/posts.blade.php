@@ -89,7 +89,7 @@
                                     <td>{{ $post->user->name }}</td>
 
                                     <td><span class="label label-warning">UREDI</span>
-                                        <span class="label label-danger">OBRIŠI</span></td>
+                                        <a href="/public/post/delete/{{ $post->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                 </tr>
                                 @endforeach
                                 <tr>

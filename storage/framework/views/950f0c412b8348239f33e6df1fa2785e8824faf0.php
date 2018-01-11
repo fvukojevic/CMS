@@ -23,7 +23,7 @@
                     <?php if($page == $paginator->currentPage()): ?>
                         <li class="page-item active"><a class="page-link"><?php echo e($page); ?></a></li>
                     <?php else: ?>
-                        <li class="page-item"><a class="page-link" href="{ $url }}"><?php echo e($page); ?></a></li>
+                        <li class="page-item"><a class="page-link" href="<?php echo e($url); ?>"><?php echo e($page); ?></a></li>
                     <?php endif; ?>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             <?php endif; ?>

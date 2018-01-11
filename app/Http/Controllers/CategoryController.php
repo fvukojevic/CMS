@@ -37,4 +37,12 @@ class CategoryController extends Controller
         return back();
 
     }
+
+    public function destroy($id)
+    {
+        $category = Category::findOrFail($id);
+        $category->delete();
+        return back();
+
+    }
 }

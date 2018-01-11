@@ -125,7 +125,7 @@
                                     <td><span class="label label-success">AKTIVNA</span></td>
                                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                                     <td><span class="label label-warning">UREDI</span>
-                                        <span class="label label-danger">OBRIŠI</span></td>
+                                        <a href="/public/ctg/delete/{{ $category->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                 </tr>
                                 @endforeach
                                 <tr>

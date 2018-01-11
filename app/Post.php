@@ -3,11 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class Post extends Model
 {
+
+    use SoftDeletes;
+    protected $dates = ['deleted_at'];
+
     public function user(){
 
         return $this->belongsTo(User::class);

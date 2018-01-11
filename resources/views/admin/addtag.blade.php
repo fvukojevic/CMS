@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <td><span class="label label-success">AKTIVNA</span></td>
                                         <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                                         <td><span class="label label-warning">UREDI</span>
-                                            <span class="label label-danger">OBRIŠI</span></td>
+                                            <a href="/public/tag/delete/{{ $tag->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
                                 <tr>

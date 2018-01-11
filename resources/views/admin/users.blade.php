@@ -88,7 +88,7 @@
                                         <td><span class="label label-success">REGISTRIRAN</span></td>
                                         <td>{{$user->email}}</td>
                                         <td><span class="label label-warning">UREDI</span>
-                                            <span class="label label-danger">OBRIŠI</span></td>
+                                            <a href="/public/post/delete/{{ $user->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
                             </table>
