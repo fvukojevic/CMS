@@ -23,7 +23,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    !-- DataTables -->
+    <link rel="stylesheet" href="/public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -58,19 +59,12 @@
                         <div class="box-header">
                             <h3 class="box-title">Pregled svih korisnika registriranih u našoj bazi.</h3>
 
-                            <div class="box-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
 
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Korisnik</th>
@@ -79,7 +73,8 @@
                                     <th>Razlog</th>
                                     <th>Upravljanje</th>
                                 </tr>
-
+                                </thead>
+                                <tbody>
                                 @foreach($users as $user)
                                     <tr>
                                         <td>{{$user->id}}</td>
@@ -87,12 +82,14 @@
                                         <td>{{$user->created_at->diffForHumans()}}</td>
                                         <td><span class="label label-success">REGISTRIRAN</span></td>
                                         <td>{{$user->email}}</td>
-                                        <td><span class="label label-warning">UREDI</span>
-                                            <a href="/public/post/delete/{{ $user->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
+                                        <td><button class="btn btn-xs btn-warning">UREDI</button>
+                                            <button class="btn btn-xs btn-danger">OBRIŠI</button></td>
                                     </tr>
                                 @endforeach
+                                </tfoot>
                             </table>
                         </div>
+                        <!-- /.box-body -->
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
@@ -129,8 +126,22 @@
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.min.js"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+<!-- DataTables -->
+<script src="/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+    })
+</script>
 </body>
 </html>

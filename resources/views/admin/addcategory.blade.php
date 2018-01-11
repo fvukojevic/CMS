@@ -23,7 +23,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    !-- DataTables -->
+    <link rel="stylesheet" href="/public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -107,38 +108,31 @@
                             </div>
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                        <div class="box-body">
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Naziv</th>
-
                                     <th>Status</th>
                                     <th>Opis</th>
                                     <th>Upravljanje</th>
                                 </tr>
+                                </thead>
+                                <tbody>
                                 @foreach($categories as $category)
-                                <tr>
-                                    <td>{{$category->id}}</td>
-                                    <td>{{$category->name}}</td>
-
-                                    <td><span class="label label-success">AKTIVNA</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    <td><span class="label label-warning">UREDI</span>
-                                        <a href="/public/ctg/delete/{{ $category->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
-                                </tr>
+                                    <tr>
+                                        <td>{{$category->id}}</td>
+                                        <td>{{$category->name}}</td>
+                                        <td><span class="label label-success">AKTIVNA</span></td>
+                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                                        <td><button class="btn btn-xs btn-warning">UREDI</button>
+                                            <button class="btn btn-xs btn-danger">OBRIŠI</button></td>
+                                    </tr>
                                 @endforeach
-                                <tr>
-                                    <td>5</td>
-                                    <td>ZEMLJA</td>
-
-                                    <td><span class="label label-warning">NIJE SPREMLJENO</span></td>
-                                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    <td><span class="label label-warning">UREDI</span>
-                                        <span class="label label-danger">OBRIŠI</span></td>
-                                </tr>
+                                </tfoot>
                             </table>
-                        </div>
+                        </div
                         <!-- /.box-body -->
                     </div>
                     <!-- /.box -->
@@ -179,8 +173,22 @@
 <!-- AdminLTE App -->
 <script src="/public/dist/js/adminlte.min.js"></script>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
+<!-- DataTables -->
+<script src="/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging'      : true,
+            'lengthChange': false,
+            'searching'   : false,
+            'ordering'    : true,
+            'info'        : true,
+            'autoWidth'   : false
+        })
+    })
+</script>
 </body>
 </html>
