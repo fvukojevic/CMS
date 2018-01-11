@@ -37,7 +37,7 @@
 @include('admin.header')
 @include('admin.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -84,8 +84,8 @@
                                         <td><span class="label label-success">OBJAVLJENO</span></td>
                                         <td>{{ $post->user->name }}</td>
 
-                                        <td><button class="btn btn-xs btn-warning">UREDI</button>
-                                            <button class="btn btn-xs btn-danger">OBRIŠI</button></td>
+                                        <td><span class="label label-warning">UREDI</span>
+                                            <a href="/public/post/delete/{{ $post->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
                                 <tr>
@@ -93,9 +93,10 @@
                                     <td>Neki Naslov #333</td>
                                     <td>9-1-2018</td>
                                     <td><span class="label label-danger">OBRISANO</span></td>
-                                    <td> Luka Bjelica </td>
+                                    <td> Luka Bjelica</td>
 
-                                    <td><button class="btn btn-xs btn-warning">UREDI</button>
+                                    <td>
+                                        <button class="btn btn-xs btn-warning">UREDI</button>
                                         <button class="btn btn-xs btn-danger">OBRIŠI</button>
                                     </td>
                                 </tr>
@@ -125,7 +126,6 @@
     </footer>
 
 
-
 </div>
 <!-- ./wrapper -->
 
@@ -146,12 +146,12 @@
     $(function () {
         $('#example1').DataTable()
         $('#example2').DataTable({
-            'paging'      : true,
+            'paging': true,
             'lengthChange': false,
-            'searching'   : false,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
         })
     })
 </script>
