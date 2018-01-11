@@ -35,7 +35,7 @@ class PostController extends Controller
 
             $posts = Post::whereMonth('created_at', $month)->whereYear('created_at', $year)->paginate(5);
 
-            return view('posts.post', compact('posts', 'archives'));
+            return view('posts.index', compact('posts', 'archives'));
         }
 
         return view('posts.index', compact('posts', 'archives'));

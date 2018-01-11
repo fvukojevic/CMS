@@ -2,11 +2,38 @@
 
     <h1><?php echo e($post->title); ?></h1>
 
+    <div class="categories">
+
+        <?php if($post->categories()->count()>0): ?>
+            <p>Kategorije:
+                <?php $__currentLoopData = $post->categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <strong>
+                        <a href="/public/category/<?php echo e($category->name); ?>"><?php echo e($category->name); ?></a>
+                    </strong>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </p>
+        <?php endif; ?>
+    </div>
+
     <hr>
 
-    <?php echo $post->body; ?> 
+    <?php echo $post->body; ?>
+
 
     <hr>
+
+    <div class="tags">
+
+        <?php if($post->tags()->count()>0): ?>
+            <p>Oznake:
+                <?php $__currentLoopData = $post->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <strong>
+                    #<a href="/public/tags/<?php echo e($tag->name); ?>"><?php echo e($tag->name); ?></a>
+                    </strong>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </p>
+        <?php endif; ?>
+    </div>
 
     <div class="comments">
         <ul class="list-group">
@@ -46,7 +73,7 @@
                     <?php echo e(csrf_field()); ?>
 
                     <div class="form-group">
-                            <textarea name="body" placeholder="Unesite komentar:" class="form-control"required></textarea>
+                        <textarea name="body" placeholder="Unesite komentar:" class="form-control" required></textarea>
                     </div>
 
                     <div class="form-group">

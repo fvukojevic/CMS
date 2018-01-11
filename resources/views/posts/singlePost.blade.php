@@ -4,11 +4,37 @@
 
     <h1>{{ $post->title }}</h1>
 
+    <div class="categories">
+
+        @if($post->categories()->count()>0)
+            <p>Kategorije:
+                @foreach($post->categories as $category)
+                    <strong>
+                        <a href="/public/category/{{ $category->name }}">{{ $category->name }}</a>
+                    </strong>
+                @endforeach
+            </p>
+        @endif
+    </div>
+
     <hr>
 
     {!! $post->body !!}
 
     <hr>
+
+    <div class="tags">
+
+        @if($post->tags()->count()>0)
+            <p>Oznake:
+                @foreach($post->tags as $tag)
+                    <strong>
+                    #<a href="/public/tags/{{ $tag->name }}">{{ $tag->name }}</a>
+                    </strong>
+                @endforeach
+            </p>
+        @endif
+    </div>
 
     <div class="comments">
         <ul class="list-group">
@@ -46,7 +72,7 @@
                 <form method="POST" action="{{ $post->id }}/comments">
                     {{ csrf_field() }}
                     <div class="form-group">
-                            <textarea name="body" placeholder="Unesite komentar:" class="form-control"required></textarea>
+                        <textarea name="body" placeholder="Unesite komentar:" class="form-control" required></textarea>
                     </div>
 
                     <div class="form-group">

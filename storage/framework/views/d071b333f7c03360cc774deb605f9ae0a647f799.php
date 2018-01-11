@@ -3,7 +3,7 @@
         <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="blog-post">
                 <h2 class="blog-post-title">
-                    <a href="show/<?php echo e($post->id); ?>" class="blog-post-title"><?php echo e($post->title); ?></a>
+                    <a href="/public/show/<?php echo e($post->id); ?>" class="blog-post-title"><?php echo e($post->title); ?></a>
                 </h2>
                 <p class="blog-post-meta">
                     <?php echo e($post->created_at->toFormattedDateString()); ?>, autor <a href="#"><?php echo e($post->user->name); ?></a>

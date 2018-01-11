@@ -5,7 +5,7 @@
         @foreach($posts as $post)
             <div class="blog-post">
                 <h2 class="blog-post-title">
-                    <a href="show/{{$post->id}}" class="blog-post-title">{{ $post->title }}</a>
+                    <a href="/public/show/{{$post->id}}" class="blog-post-title">{{ $post->title }}</a>
                 </h2>
                 <p class="blog-post-meta">
                     {{ $post->created_at->toFormattedDateString() }}, autor <a href="#">{{ $post->user->name }}</a>
