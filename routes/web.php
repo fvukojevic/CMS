@@ -54,3 +54,5 @@ Route::get('/admin/categories/add', 'AdminController@addcategory');
 Route::get('/admin/tags/add', 'AdminController@addtag');
 Route::get('/admin/users', 'AdminController@users');
 
+Route::get('/profile', 'ProfileController@index');
+

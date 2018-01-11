@@ -45,6 +45,7 @@
                     <a id="nightmodeID"><img class="nightmodeCLS" src="/resources/assets/img/brightness.png"></a>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
                         <a class="dropdown-item" href="/public/admin">Administracija</a>
+                        <a class="dropdown-item" href="/public/profile">Moj profil</a>
                         <a class="dropdown-item" href="/public/logout">Odjava</a>
 
                     </div>

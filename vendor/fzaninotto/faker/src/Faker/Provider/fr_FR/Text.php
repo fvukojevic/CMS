@@ -3889,7 +3889,7 @@ ils s'apercevaient soignant leurs fleurs à leur fenêtre.
 Parmi les fenêtres du village, il y en avait une encore plus
 souvent occupée; car, le dimanche, depuis le matin jusqu'à la
 nuit, et chaque après-midi, si le temps était clair, on voyait à
-la lucarne d'un grenier le profil maigre de M. Binet penché sur
+la lucarne d'un grenier le profile maigre de M. Binet penché sur
 son tour, dont le ronflement monotone s'entendait jusqu'au Lion
 d'or
 
@@ -5509,7 +5509,7 @@ Elle lui donna un coup de coude.
 Et il la considéra du coin de l'oeil, tout en continuant à
 marcher.
 
-Son profil était si calme, que l'on n'y devinait rien. Il se
+Son profile était si calme, que l'on n'y devinait rien. Il se
 détachait en pleine lumière, dans l'ovale de sa capote qui avait
 des rubans pâles ressemblant à des feuilles de roseau. Ses yeux
 aux longs cils courbes regardaient devant elle, et, quoique bien
