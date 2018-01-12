@@ -45,13 +45,13 @@ Route::group(['middleware' => 'can:moderator-access'], function () {
 });
 
 Route::group(['middleware' => 'can:user-access'], function () {
-    Route::get('/show/{id}', 'PostController@show');
     Route::post('/show/{post}/comments', 'CommentController@store');
-    Route::get('/tags/{tag}', 'TagController@show');
-    Route::get('/category/{category}', 'CategoryController@show');
     Route::get('/profile', 'ProfileController@index');
 });
 
+Route::get('/show/{id}', 'PostController@show');
+Route::get('/tags/{tag}', 'TagController@show');
+Route::get('/category/{category}', 'CategoryController@show');
 
 Route::get('/logout', function () {
     Auth::logout();

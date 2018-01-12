@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('moderator-access')): ?>
+
         <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="blog-post">
                 <h2 class="blog-post-title">
@@ -28,7 +28,7 @@
             </div>
             <hr>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        <?php endif; ?>
+
     <div class="text-center">
         <?php echo e($posts->links()); ?>
 
