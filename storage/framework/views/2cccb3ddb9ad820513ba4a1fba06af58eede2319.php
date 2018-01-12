@@ -14,11 +14,7 @@
             </p>
         <?php endif; ?>
     </div>
-    <?php if( $post->post_thumbnail ): ?>
-    <div class="blog-thumbnail">
-        <img src="/public/uploads/<?php echo e($post->post_thumbnail); ?>" />
-    </div>
-    <?php endif; ?>
+
     <hr>
 
     <?php echo $post->body; ?>

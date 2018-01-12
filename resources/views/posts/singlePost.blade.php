@@ -16,11 +16,7 @@
             </p>
         @endif
     </div>
-    @if( $post->post_thumbnail )
-    <div class="blog-thumbnail">
-        <img src="/public/uploads/{{ $post->post_thumbnail }}" />
-    </div>
-    @endif
+
     <hr>
 
     {!! $post->body !!}

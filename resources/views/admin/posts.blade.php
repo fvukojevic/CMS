@@ -88,19 +88,7 @@
                                             <a href="/public/post/delete/{{ $post->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
-                                <tr>
-                                    <td>5</td>
-                                    <td>Neki Naslov #333</td>
-                                    <td>9-1-2018</td>
-                                    <td><span class="label label-danger">OBRISANO</span></td>
-                                    <td> Luka Bjelica</td>
-
-                                    <td>
-                                        <button class="btn btn-xs btn-warning">UREDI</button>
-                                        <button class="btn btn-xs btn-danger">OBRIŠI</button>
-                                    </td>
-                                </tr>
-                                </tfoot>
+                                </tbody>
                             </table>
                         </div>
                         <!-- /.box-body -->

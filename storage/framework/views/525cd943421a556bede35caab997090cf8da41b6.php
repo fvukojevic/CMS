@@ -56,25 +56,46 @@
                             <input id="user_email" name="email" class="form-control" type="text" value="<?php echo e(Auth::user()->email); ?>">
                         </div>
                     </div>
-
-
-                    <div class="form-group">
-                        <label for="pass" class="col-md-3 control-label">New Password:</label>
-                        <div class="col-md-8">
-                            <input id="pass" name="password" class="form-control" type="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="pass_repet" class="col-md-3 control-label">Confirm password:</label>
-                        <div class="col-md-8">
-                            <input id="pass_repet" name="password-repeat" class="form-control" type="password">
-                        </div>
-                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label"></label>
                         <div class="col-md-8">
                             <input type="submit" class="btn btn-luksha" value="Save Changes">
                         </div>
+                    </div>
+                </div>
+            </form>
+
+            <hr>
+
+            <form method="POST" action="/public/profile/password" class="form-horizontal"
+                  role="form">
+                <?php echo e(csrf_field()); ?>
+
+                <?php echo e(method_field('PATCH')); ?>
+
+                <h3 style="text-align: center;">Promjena lozinke</h3><hr>
+                <div class="form-group">
+                    <label for="pass_old" class="col-md-3 control-label">Old password:</label>
+                    <div class="col-md-8">
+                        <input id="pass_old" name="password-old" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pass" class="col-md-3 control-label">New Password:</label>
+                    <div class="col-md-8">
+                        <input id="pass" name="password" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pass_repet" class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                        <input id="pass_repet" name="password-repeat" class="form-control" type="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <input type="submit" class="btn btn-luksha" value="Save Changes">
                     </div>
                 </div>
             </form>

@@ -24,15 +24,8 @@
                             <a href="/public/category/<?php echo e($category); ?>"><?php echo e($category); ?></a>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php endif; ?>
-
-                    <?php if($post->tags()->count()>0): ?>
-                        , oznake:
-                        <?php $__currentLoopData = $post->tags->pluck('name'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <a href="/public/tags/<?php echo e($tag); ?>"><?php echo e($tag); ?></a>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <?php endif; ?>
                 </p>
-                    <div class="kldfjlf">
+                    <div class="post">
                         <?php echo str_limit($post->body, 500); ?>
 
                     </div>

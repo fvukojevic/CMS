@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Reminder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
@@ -18,7 +19,8 @@ class AdminController extends Controller
         $numofComments = Comment::count();
         $numofUsers = User::count();
         $numOfCategories = Category::count();
-        return view('admin.index', compact('numofPosts', 'numofComments', 'numofUsers', 'numOfCategories'));
+        $reminders = Reminder::latest()->paginate(5);
+        return view('admin.index', compact('numofPosts', 'numofComments', 'numofUsers', 'numOfCategories', 'reminders'));
     }
 
     public function posts(){

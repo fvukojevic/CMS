@@ -26,15 +26,8 @@
                             <a href="/public/category/{{ $category  }}">{{ $category  }}</a>
                         @endforeach
                     @endif
-
-                    @if($post->tags()->count()>0)
-                        , oznake:
-                        @foreach($post->tags->pluck('name') as $tag)
-                            <a href="/public/tags/{{ $tag  }}">{{ $tag  }}</a>
-                        @endforeach
-                    @endif
                 </p>
-                    <div class="kldfjlf">
+                    <div class="post">
                         {!!  str_limit($post->body, 500) !!}
                     </div>
             </div>

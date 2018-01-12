@@ -44,6 +44,11 @@ Route::group(['middleware' => 'can:moderator-access'], function () {
     Route::get('/ctg/create', 'CategoryController@create');
     Route::get('/ctg/delete/{id}', 'CategoryController@destroy');
     Route::patch('/ctg/update/{id}', 'CategoryController@update');
+
+    Route::post('/reminder/create', 'ReminderController@store');
+    Route::get('/reminder/edit/{id}', 'ReminderController@edit');
+    Route::get('/reminder/delete/{id}', 'ReminderController@destroy');
+    Route::patch('/reminder/update/{id}', 'ReminderController@update');
 });
 
 Route::group(['middleware' => 'can:user-access'], function () {
@@ -51,6 +56,7 @@ Route::group(['middleware' => 'can:user-access'], function () {
     Route::get('/profile', 'ProfileController@index');
     Route::get('/profile/edit', 'ProfileController@edit');
     Route::patch('/profile/update', 'ProfileController@update');
+    Route::patch('/profile/password', 'ProfileController@password');
 });
 
 Route::get('/show/{id}', 'PostController@show');

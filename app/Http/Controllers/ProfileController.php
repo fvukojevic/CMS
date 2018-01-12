@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\ImageManagerStatic as Image;
 use Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -23,6 +24,34 @@ class ProfileController extends Controller
         return view('profile.editProfile', compact('user'));
     }
 
+    public function password(Request $request){
+        $user = Auth::user();
+
+        $this->validate(request(),[
+            'password' => 'required|min:6',
+            'password-old' => 'required|min:6',
+            'password-repeat' => 'required|same:password'
+        ]);
+
+        if(  $request->has('password-old') && $request->has('password') && $request->has('password-repeat')){
+
+            $pass = request('password');
+            $passold = request('password-old');
+            $passrepeat = request('password-repeat');
+
+            if(($pass == $passrepeat) && (Hash::check($passold, $user->password))){
+                $user->password = bcrypt($pass);
+                $user->save();
+                Session::flash('flash_message', 'Uspješna izmjena lozinke!');
+                return back();
+            }
+        }
+        else{
+            Session::flash('flash_message', 'Neuspješna izmjena lozinke!');
+        }
+        return back();
+    }
+
 
     public function update(Request $request)
     {
@@ -32,21 +61,8 @@ class ProfileController extends Controller
         $this->validate(request(),[
 
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required|min:8'
+            'email' => 'required'
         ]);
-
-        if( $request->has('password') && $request->has('password-repeat')){
-
-            $pass = request('password');
-            $passrepeat = request('password-repeat');
-
-            if($pass == $passrepeat){
-                $user->password = bcrypt($pass);
-                Session::flash('flash_messagee', 'Uspješna izmjena lozinke!');
-            }
-
-        }
 
         if( $request->hasFile('profile_pic') ) {
 
