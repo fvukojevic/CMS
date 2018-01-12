@@ -49,6 +49,8 @@ Route::group(['middleware' => 'can:moderator-access'], function () {
 Route::group(['middleware' => 'can:user-access'], function () {
     Route::post('/show/{post}/comments', 'CommentController@store');
     Route::get('/profile', 'ProfileController@index');
+    Route::get('/profile/edit', 'ProfileController@edit');
+    Route::patch('/profile/update', 'ProfileController@update');
 });
 
 Route::get('/show/{id}', 'PostController@show');

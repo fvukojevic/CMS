@@ -90,7 +90,7 @@ class PostController extends Controller
 
         Session::flash('flash_message', 'Post uspješno objavljen!');
 
-        return $request;
+        return back();
 
     }
 
@@ -119,7 +119,7 @@ class PostController extends Controller
 
             $post->post_thumbnail = $filename;
         }
-        
+
         $post->update($request->all());
 
         $post->categories()->detach();
