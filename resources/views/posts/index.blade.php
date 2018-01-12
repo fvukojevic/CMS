@@ -3,6 +3,17 @@
 @section('content')
 
         @foreach($posts as $post)
+            <div class="row" style="margin-top:15px;">
+                @if($post->post_thumbnail != NULL)
+                <div class="col-sm-3">
+                    <img src="/public/uploads/{{$post->post_thumbnail}}" alt="Istaknuta Slika" style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                </div>
+                    @else
+                    <div class="col-sm-3">
+                        <img src="/public/uploads/no_thumbnail_pic/null.png" alt="Istaknuta Slika" style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                    </div>
+                @endif
+                <div class="col-sm-6">
             <div class="blog-post">
                 <h2 class="blog-post-title">
                     <a href="/public/show/{{$post->id}}" class="blog-post-title">{{ $post->title }}</a>
@@ -27,7 +38,7 @@
                         {!!  str_limit($post->body, 500) !!}
                     </div>
             </div>
-            <hr>
+                    <hr> </div> </div>
         @endforeach
 
     <div class="text-center">

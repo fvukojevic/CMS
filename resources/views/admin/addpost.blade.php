@@ -29,6 +29,28 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <style type="text/css"> .btn-file {
+            position: relative;
+            overflow: hidden;
+            width:100%;
+            height:153px;
+        }
+        .btn-file input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            min-width: 100%;
+            min-height: 100%;
+            font-size: 100px;
+            text-align: right;
+            filter: alpha(opacity=0);
+            opacity: 0;
+            outline: none;
+            background: white;
+            cursor: inherit;
+            display: block;
+        }</style>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -149,6 +171,20 @@
                         <!-- /.col-->
                     </div>
                     <div class="col-md-2">
+
+                        <div class="box box-primary">
+                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+
+                                   <span class="btn btn-default btn-file">
+                                         <i class="fa fa-plus-circle " style="margin-top:65px"></i> <span>Dodaj Istaknutu Sliku</span></a> <input type="file" name="post_thumbnail" id="post_thumbnail">
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="box box-primary">
                             <div class="box-header"><h3> TAGOVI </h3><span class="small">Odaberite odgovarajuće tagove za vašu objavu.</span>
                             </div>
@@ -167,16 +203,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="box box-primary">
-                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
-                            </div>
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label for="post_thumbnail">Odaberite istaknutu sliku:</label> <br/>
-                                    <input type="file" name="post_thumbnail" id="post_thumbnail"/>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </form>
                 <!-- ./row -->
