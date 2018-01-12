@@ -1,6 +1,17 @@
 <?php $__env->startSection('content'); ?>
 
         <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="row" style="margin-top:15px;">
+                <?php if($post->post_thumbnail != NULL): ?>
+                <div class="col-sm-3">
+                    <img src="/public/uploads/<?php echo e($post->post_thumbnail); ?>" alt="Istaknuta Slika" style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                </div>
+                    <?php else: ?>
+                    <div class="col-sm-3">
+                        <img src="/public/uploads/no_thumbnail_pic/null.png" alt="Istaknuta Slika" style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                    </div>
+                <?php endif; ?>
+                <div class="col-sm-6">
             <div class="blog-post">
                 <h2 class="blog-post-title">
                     <a href="/public/show/<?php echo e($post->id); ?>" class="blog-post-title"><?php echo e($post->title); ?></a>
@@ -26,7 +37,7 @@
 
                     </div>
             </div>
-            <hr>
+                    <hr> </div> </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     <div class="text-center">

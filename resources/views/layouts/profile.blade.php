@@ -1,34 +1,6 @@
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/resources/assets/img/favicons/favicon.ico">
+@extends('layouts.master')
 
-    <title>FSR CMS | Dobrodošli!</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="/resources/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-grid.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-grid.min.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-reboot.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-reboot.min.css" rel="stylesheet">
-
-
-    <!-- CSS za FSRCMS -->
-    <link href="/resources/fsrcms.css" rel="stylesheet">
-</head>
-
-<body>
-
-@include('layouts.navbar')
-
-
-<hr>
-
-<main role="main">
+@section('content')
     <div id="right-block" class="col-md-7 offset-3">
 
         <div class="user-settings">
@@ -96,7 +68,7 @@
 
 </main> <!-- KRAJ MAINA -->
 
-@include('layouts.footer')
+@endsection
 
 
 <!-- Bootstrap core JavaScript
