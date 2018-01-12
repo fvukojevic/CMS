@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+        @can('moderator-access')
         @foreach($posts as $post)
             <div class="blog-post">
                 <h2 class="blog-post-title">
@@ -29,6 +29,7 @@
             </div>
             <hr>
         @endforeach
+        @endcan
     <div class="text-center">
         {{ $posts->links() }}
     </div>
