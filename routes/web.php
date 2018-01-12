@@ -34,10 +34,12 @@ Route::group(['middleware' => 'can:moderator-access'], function () {
     Route::get('/create', 'PostController@create');
     Route::get('/post/delete/{id}', 'PostController@destroy');
     Route::patch('/post/update/{id}', 'PostController@update');
+
     Route::post('/tag/create', 'TagController@store');
     Route::get('/tag/create', 'TagController@create');
     Route::get('/tag/delete/{id}', 'TagController@destroy');
     Route::patch('/tag/update/{id}', 'TagController@update');
+
     Route::post('/ctg/create', 'CategoryController@store');
     Route::get('/ctg/create', 'CategoryController@create');
     Route::get('/ctg/delete/{id}', 'CategoryController@destroy');

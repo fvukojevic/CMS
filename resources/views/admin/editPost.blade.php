@@ -104,7 +104,7 @@
 
         <section class="content">
             <div class="row">
-                <form method="POST" action="/public/post/update/{{ $post->id }}">
+                <form method="POST" action="/public/post/update/{{ $post->id }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
                     <div class="col-md-10">
@@ -169,7 +169,16 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="box box-primary">
+                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="post_thumbnail">Odaberite istaknutu sliku:</label> <br/>
+                                    <input type="file" name="post_thumbnail" id="post_thumbnail"/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <!-- ./row -->

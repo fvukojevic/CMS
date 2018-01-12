@@ -30,8 +30,8 @@
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+    <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
 
     <!-- Main Header -->
 <?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
@@ -84,7 +84,7 @@
                                         <td><span class="label label-success">OBJAVLJENO</span></td>
                                         <td><?php echo e($post->user->name); ?></td>
 
-                                        <td><span class="label label-warning">UREDI</span>
+                                        <td> <a href="/public/admin/post/edit/<?php echo e($post->id); ?>"><span class="label label-warning">UREDI</span></a>
                                             <a href="/public/post/delete/<?php echo e($post->id); ?>"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

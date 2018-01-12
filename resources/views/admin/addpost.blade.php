@@ -104,7 +104,7 @@
 
         <section class="content">
             <div class="row">
-                <form method="POST" action="/public/create">
+                <form method="POST" action="/public/create" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="col-md-10">
                         <div class="box box-primary">
@@ -167,7 +167,16 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="box box-primary">
+                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="post_thumbnail">Odaberite istaknutu sliku:</label> <br/>
+                                    <input type="file" name="post_thumbnail" id="post_thumbnail"/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <!-- ./row -->
@@ -177,23 +186,22 @@
         <!-- Main content -->
 
 
-
     </div>
 
 
-<!-- /.content -->
+    <!-- /.content -->
 
-<!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
 
-<!-- Main Footer -->
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-        Admin Panel v1.0
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
-</footer>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="pull-right hidden-xs">
+            Admin Panel v1.0
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
+    </footer>
 
 
 </div>

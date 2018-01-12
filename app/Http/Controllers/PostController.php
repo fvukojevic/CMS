@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Collection;
+use Illuminate\Http\UploadedFile;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
 use App\Tag;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class PostController extends Controller
 {
@@ -54,7 +56,7 @@ class PostController extends Controller
         return view('posts.create', compact('post'));
     }
 
-    public function store(){
+    public function store(Request $request){
 
         $post = new Post;
 
@@ -66,16 +68,29 @@ class PostController extends Controller
 
         $requestCategory = request('categories');
         $requestTag = request('selectedtags');
+        $requestImage = request('post_thumbnail');
         $post->title = request('title');
         $post->body = request('body');
         $post->user_id = auth()->id();
+
+
+        if( $request->hasFile('post_thumbnail') ) {
+
+            $post_thumbnail     = $request->file('post_thumbnail');
+            $filename           = time() . '.' . $post_thumbnail->getClientOriginalExtension();
+
+            Image::make($post_thumbnail)->resize(600, 600)->save( public_path('/uploads/' . $filename ) );
+
+            $post->post_thumbnail = $filename;
+        }
+
         $post->save();
         $post->categories()->attach($requestCategory);
         $post->tags()->attach($requestTag);
 
         Session::flash('flash_message', 'Post uspješno objavljen!');
 
-        return back();
+        return $request;
 
     }
 
@@ -94,6 +109,17 @@ class PostController extends Controller
         $requestTag = request('selectedtags');
 
         $post = Post::findOrFail($id);
+
+        if( $request->hasFile('post_thumbnail') ) {
+
+            $post_thumbnail     = $request->file('post_thumbnail');
+            $filename           = time() . '.' . $post_thumbnail->getClientOriginalExtension();
+
+            Image::make($post_thumbnail)->resize(600, 600)->save( public_path('/uploads/' . $filename ) );
+
+            $post->post_thumbnail = $filename;
+        }
+        
         $post->update($request->all());
 
         $post->categories()->detach();

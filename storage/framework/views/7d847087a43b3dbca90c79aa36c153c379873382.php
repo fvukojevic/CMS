@@ -76,6 +76,21 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
 
+        <?php if(Session::has('flash_message')): ?>
+            <div class="alert alert-success">
+                <?php echo e(Session::get('flash_message')); ?>
+
+            </div>
+        <?php endif; ?>
+        <?php if($errors->any()): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><?php echo e($error); ?></li>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </ul>
+            </div>
+        <?php endif; ?>
         <section class="content-header">
             <h1>
                 Uređivač Objava
@@ -90,7 +105,7 @@
 
         <section class="content">
             <div class="row">
-                <form method="POST" action="/public/create">
+                <form method="POST" action="/public/create" enctype="multipart/form-data">
                     <?php echo e(csrf_field()); ?>
 
                     <div class="col-md-10">
@@ -154,7 +169,16 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="box box-primary">
+                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+                                    <label for="post_thumbnail">Odaberite istaknutu sliku:</label> <br/>
+                                    <input type="file" name="post_thumbnail" id="post_thumbnail"/>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <!-- ./row -->
@@ -163,24 +187,23 @@
 
         <!-- Main content -->
 
+
     </div>
-</div>
 
 
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
+    <!-- /.content -->
 
-<!-- Main Footer -->
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-        Admin Panel v1.0
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
-</footer>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- To the right -->
+        <div class="pull-right hidden-xs">
+            Admin Panel v1.0
+        </div>
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
+    </footer>
 
 
 </div>
