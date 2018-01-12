@@ -22,7 +22,6 @@ class CreateCategoriesTable extends Migration
         Schema::create('category_post', function (Blueprint $table) {
             $table->integer('post_id');
             $table->integer('category_id');
-            $table->softDeletes();
             $table->primary('post_id', 'category_id');
         });
     }

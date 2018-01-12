@@ -7,6 +7,7 @@ use App\Post;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -72,32 +73,36 @@ class PostController extends Controller
         $post->categories()->attach($requestCategory);
         $post->tags()->attach($requestTag);
 
+        Session::flash('flash_message', 'Post uspješno objavljen!');
+
         return back();
 
     }
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $tags = Tag::get()->all();
+        return view('admin.editPost', compact('post', 'tags'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update($id, Request $request)
     {
-        //
+        $requestCategory = request('categories');
+        $requestTag = request('selectedtags');
+
+        $post = Post::findOrFail($id);
+        $post->update($request->all());
+
+        $post->categories()->detach();
+        $post->tags()->detach();
+
+        $post->categories()->attach($requestCategory);
+        $post->tags()->attach($requestTag);
+        Session::flash('flash_message', 'Post uspješno uređen!');
+        return back();
     }
 
     public function destroy($id)

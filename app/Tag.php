@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tag extends Model
 {
 
-    use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+    protected $fillable = array('name', 'created_at', 'modified_at');
 
     public function posts(){
         return $this->belongsToMany(Post::class);

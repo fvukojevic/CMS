@@ -23,7 +23,6 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    !-- DataTables -->
     <link rel="stylesheet" href="/public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- Google Font -->
     <link rel="stylesheet"
@@ -74,6 +73,20 @@
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
+        @if(Session::has('flash_message'))
+            <div class="alert alert-success">
+                {{ Session::get('flash_message') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <section class="content-header">
             <h1>
                 Kategorije
@@ -126,11 +139,11 @@
                                         <td>{{$category->name}}</td>
                                         <td><span class="label label-success">AKTIVNA</span></td>
                                         <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td><span class="label label-warning">UREDI</span>
+                                        <td> <a href="/public/admin/category/edit/{{ $category->id }}"><span class="label label-warning">UREDI</span></a>
                                             <a href="/public/ctg/delete/{{ $category->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
-                                </tfoot>
+                                </tbody>
                             </table>
                         </div>
                     </div>

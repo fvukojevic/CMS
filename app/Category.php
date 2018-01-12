@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
-    use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+    protected $fillable = array('name', 'created_at', 'modified_at');
 
     public function getRouteKeyName()
     {

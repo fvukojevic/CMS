@@ -84,7 +84,7 @@
                                         <td><span class="label label-success">OBJAVLJENO</span></td>
                                         <td>{{ $post->user->name }}</td>
 
-                                        <td><span class="label label-warning">UREDI</span>
+                                        <td> <a href="/public/admin/post/edit/{{ $post->id }}"><span class="label label-warning">UREDI</span></a>
                                             <a href="/public/post/delete/{{ $post->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach

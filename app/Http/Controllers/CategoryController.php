@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Post;
+use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -36,6 +37,23 @@ class CategoryController extends Controller
 
         return back();
 
+    }
+
+    public function edit($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('admin.editCategory', compact('category'));
+    }
+
+
+    public function update($id, Request $request)
+    {
+
+        $category = Category::findOrFail($id);
+        $category->update($request->all());
+
+        Session::flash('flash_message', 'Kategorija uspješno uređena!');
+        return back();
     }
 
     public function destroy($id)

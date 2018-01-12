@@ -68,26 +68,25 @@
             </div>
         </nav>
     </header>
-<?php echo $__env->make('admin.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('admin.sidebar')
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <?php if(Session::has('flash_message')): ?>
+        @if(Session::has('flash_message'))
             <div class="alert alert-success">
-                <?php echo e(Session::get('flash_message')); ?>
-
+                {{ Session::get('flash_message') }}
             </div>
-        <?php endif; ?>
-        <?php if($errors->any()): ?>
+        @endif
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
-                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><?php echo e($error); ?></li>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
                 </ul>
             </div>
-        <?php endif; ?>
+        @endif
         <section class="content-header">
             <h1>
                 Kategorije
@@ -107,46 +106,20 @@
                 <div class="col-xs-12">
                     <div class="box box-primary">
                         <div class="box-header">
-                            <form method="POST" action="<?php echo e(('/public/ctg/create')); ?>">
-                                <?php echo e(csrf_field()); ?>
-
+                            <form method="POST" action="/public/ctg/update/{{ $category->id }}">
+                                {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
                                 <div class="input-group margin">
                                     <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-warning">DODAJ KATEGORIJU</button>
+                                        <button type="submit" class="btn btn-warning">SPREMI</button>
                                     </div>
-                                    <input type="text" id="dodaj_kategoriju" name="name" class="form-control">
+                                    <input type="text" id="dodaj_kategoriju" name="name" class="form-control" value="{{ $category->name }}">
                                 </div>
                             </form>
 
                             <div class="box-tools">
 
                             </div>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Naziv</th>
-                                    <th>Status</th>
-                                    <th>Opis</th>
-                                    <th>Upravljanje</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <td><?php echo e($category->id); ?></td>
-                                        <td><?php echo e($category->name); ?></td>
-                                        <td><span class="label label-success">AKTIVNA</span></td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td> <a href="/public/admin/category/edit/<?php echo e($category->id); ?>"><span class="label label-warning">UREDI</span></a>
-                                            <a href="/public/ctg/delete/<?php echo e($category->id); ?>"><span class="label label-danger">OBRIŠI</span></a></td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                     <!-- /.box -->

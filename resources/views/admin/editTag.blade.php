@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <head>
     <meta charset="utf-8">
@@ -12,10 +17,9 @@
     <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect. -->
+
     <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,118 +72,82 @@
             </div>
         </nav>
     </header>
-<?php echo $__env->make('admin.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('admin.sidebar')
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <?php if(Session::has('flash_message')): ?>
+        @if(Session::has('flash_message'))
             <div class="alert alert-success">
-                <?php echo e(Session::get('flash_message')); ?>
-
+                {{ Session::get('flash_message') }}
             </div>
-        <?php endif; ?>
-        <?php if($errors->any()): ?>
+        @endif
+        @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
-                    <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><?php echo e($error); ?></li>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
                 </ul>
             </div>
-        <?php endif; ?>
+        @endif
         <section class="content-header">
             <h1>
-                Kategorije
+                Tagovi
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li><a href="../Pocetna.html"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li>Objave</li>
-                <li class="active">Dodaj Kategoriju</li>
+                <li class="active">Dodaj Tag</li>
             </ol>
         </section>
 
-        <!-- Main content -->
-        <section class="content container-fluid">
-
+        <section class="content">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="box box-primary">
                         <div class="box-header">
-                            <form method="POST" action="<?php echo e(('/public/ctg/create')); ?>">
-                                <?php echo e(csrf_field()); ?>
-
+                            <form method="POST" action="/public/tag/update/{{ $tag->id }}">
+                                {{ csrf_field() }}
+                                {{ method_field('PATCH') }}
                                 <div class="input-group margin">
                                     <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-warning">DODAJ KATEGORIJU</button>
+                                        <button type="submit" class="btn btn-warning">Spremi</button>
                                     </div>
-                                    <input type="text" id="dodaj_kategoriju" name="name" class="form-control">
+                                    <input type="text" id="dodaj_tag" name="name" class="form-control" value="{{ $tag->name }}">
                                 </div>
                             </form>
-
-                            <div class="box-tools">
-
-                            </div>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Naziv</th>
-                                    <th>Status</th>
-                                    <th>Opis</th>
-                                    <th>Upravljanje</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <td><?php echo e($category->id); ?></td>
-                                        <td><?php echo e($category->name); ?></td>
-                                        <td><span class="label label-success">AKTIVNA</span></td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td> <a href="/public/admin/category/edit/<?php echo e($category->id); ?>"><span class="label label-warning">UREDI</span></a>
-                                            <a href="/public/ctg/delete/<?php echo e($category->id); ?>"><span class="label label-danger">OBRIŠI</span></a></td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
-                    <!-- /.box -->
                 </div>
             </div>
-
-            <div class="pull-right">
-                <button class="btn btn-success">SPREMI SVE</button>
-
-            </div>
         </section>
-        <!-- /.content -->
 
+        <!-- Main content -->
 
     </div>
-    <!-- /.content-wrapper -->
+</div>
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Admin Panel v1.0
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
-    </footer>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Main Footer -->
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        Admin Panel v1.0
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
+</footer>
 
 
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED JS SCRIPTS -->
-
 <!-- jQuery 3 -->
 <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -187,6 +155,9 @@
 <!-- AdminLTE App -->
 <script src="/public/dist/js/adminlte.min.js"></script>
 
+
+<!-- FastClick -->
+<script src="/public/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- DataTables -->
 <script src="/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -195,14 +166,15 @@
     $(function () {
         $('#example1').DataTable()
         $('#example2').DataTable({
-            'paging'      : true,
+            'paging': true,
             'lengthChange': false,
-            'searching'   : false,
-            'ordering'    : true,
-            'info'        : true,
-            'autoWidth'   : false
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
         })
     })
 </script>
+
 </body>
 </html>

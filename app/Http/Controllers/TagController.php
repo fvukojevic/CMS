@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tag;
 use App\Post;
+use Illuminate\Support\Facades\Session;
 
 class TagController extends Controller
 {
@@ -36,6 +37,23 @@ class TagController extends Controller
 
         return back();
 
+    }
+
+    public function edit($id)
+    {
+        $tag = Tag::findOrFail($id);
+        return view('admin.editTag', compact('tag'));
+    }
+
+
+    public function update($id, Request $request)
+    {
+
+        $tag = Tag::findOrFail($id);
+        $tag->update($request->all());
+
+        Session::flash('flash_message', 'Tag uspješno uređen!');
+        return back();
     }
 
     public function destroy($id)

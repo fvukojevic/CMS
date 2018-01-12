@@ -98,14 +98,15 @@
             <ol class="breadcrumb">
                 <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li>Objave</li>
-                <li class="active">Uređivač Objava</li>
+                <li class="active">Uredi objavu</li>
             </ol>
         </section>
 
         <section class="content">
             <div class="row">
-                <form method="POST" action="/public/create">
+                <form method="POST" action="/public/post/update/{{ $post->id }}">
                     {{ csrf_field() }}
+                    {{ method_field('PATCH') }}
                     <div class="col-md-10">
                         <div class="box box-primary">
                             <div class="box-header">
@@ -115,7 +116,7 @@
                                         <div class="input-group-btn">
                                             <button type="button" class="btn btn-warning">Naslov</button>
                                         </div>
-                                        <input type="text" id="title" name="title" class="form-control">
+                                        <input type="text" id="title" name="title" class="form-control" value="{{ $post->title }}">
                                     </div>
 
                                     <div class="form-group">
@@ -133,7 +134,7 @@
 
 
                                     <textarea id="editor1" name="body" rows="10" cols="80">
-                                            Tekst koji ćete vi promjeniti da bi napisali novu objavu.
+                                            {{ $post->body }}
                                     </textarea>
                                     <div class="form-group">
                                         <div class="pull-right">
@@ -155,14 +156,15 @@
                             <div class="box-body">
                                 <div class="form-group">
 
-                                    @foreach ($tags as $tag)
-                                        <label>
-                                            <input type="checkbox" value="{{ $tag->id }}" name="selectedtags[]"
-                                                   class="flat-red">
-                                            <span class="label label-warning"
-                                                  style="padding-top: 5px"> {{ $tag->name }}</span>
-                                        </label>
-                                    @endforeach
+
+                                        @foreach ($tags as $tag)
+                                            <label>
+                                                <input type="checkbox" value="{{ $tag->id }}" name="selectedtags[]"
+                                                       class="flat-red">
+                                                <span class="label label-warning"
+                                                      style="padding-top: 5px"> {{ $tag->name }}</span>
+                                            </label>
+                                        @endforeach
 
                                 </div>
                             </div>

@@ -78,7 +78,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-
+        @if(Session::has('flash_message'))
+            <div class="alert alert-success">
+                {{ Session::get('flash_message') }}
+            </div>
+        @endif
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <section class="content-header">
             <h1>
                 Tagovi
@@ -129,11 +142,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <td>{{$tag->name}}</td>
                                         <td><span class="label label-success">AKTIVNA</span></td>
                                         <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td><span class="label label-warning">UREDI</span>
+                                        <td> <a href="/public/admin/tag/edit/{{ $tag->id }}"><span class="label label-warning">UREDI</span></a>
                                             <a href="/public/tag/delete/{{ $tag->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
-                                </tfoot>
+                                </tbody>
                             </table>
                         </div>
                         <!-- /.box-body -->
