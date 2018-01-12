@@ -176,13 +176,13 @@
 
         <!-- Main content -->
 
+
+
     </div>
-</div>
 
 
-</section>
 <!-- /.content -->
-</div>
+
 <!-- /.content-wrapper -->
 
 <!-- Main Footer -->
