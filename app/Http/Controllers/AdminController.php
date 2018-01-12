@@ -45,4 +45,8 @@ class AdminController extends Controller
         $categories = Category::get()->all();
         return view('admin.addcategory', compact('categories'));
     }
+
+    public function theme(){
+        return view('admin.theme');
+    }
 }

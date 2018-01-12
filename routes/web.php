@@ -54,4 +54,5 @@ Route::get('/admin/post/edit/{id}', 'PostController@edit');
 Route::get('/admin/tag/edit/{id}', 'TagController@edit');
 Route::get('/admin/category/edit/{id}', 'CategoryController@edit');
 Route::get('/profile', 'ProfileController@index');
+Route::get('/admin/theme', 'AdminController@theme');
 

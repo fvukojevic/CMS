@@ -36,6 +36,7 @@
                 </ul>
             </li>
             <li><a href="/public/admin/users"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
+            <li ><a href="/public/admin/theme"><i class="fa fa-plus-circle"></i> <span>Izgled</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
     </section>
