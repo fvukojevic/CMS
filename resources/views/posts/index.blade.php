@@ -3,16 +3,16 @@
 @section('content')
 
     @foreach($posts as $post)
-        <div class="row" style="margin-top:15px;">
+        <div class="row">
             @if($post->post_thumbnail)
                 <div class="col-sm-4">
                     <img src="/public/uploads/{{$post->post_thumbnail}}" alt="Istaknuta Slika"
-                         style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                         style="border:solid white 1px; height: 150px; width:190px;">
                 </div>
             @else
                 <div class="col-sm-4">
                     <img src="/public/uploads/no_thumbnail_pic/null.png" alt="Istaknuta Slika"
-                         style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                         style="border:solid white 1px; height: 150px; width:190px;">
                 </div>
             @endif
             <div class="col-sm-8">
@@ -33,9 +33,9 @@
                         {!!  str_limit($post->body, 500) !!}
                     </div>
                 </div>
-                <hr>
             </div>
         </div>
+        <hr>
     @endforeach
 
     <div class="text-center">

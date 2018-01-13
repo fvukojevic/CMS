@@ -1,16 +1,16 @@
 <?php $__env->startSection('content'); ?>
 
     <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <div class="row" style="margin-top:15px;">
+        <div class="row">
             <?php if($post->post_thumbnail): ?>
                 <div class="col-sm-4">
                     <img src="/public/uploads/<?php echo e($post->post_thumbnail); ?>" alt="Istaknuta Slika"
-                         style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                         style="border:solid white 1px; height: 150px; width:190px;">
                 </div>
             <?php else: ?>
                 <div class="col-sm-4">
                     <img src="/public/uploads/no_thumbnail_pic/null.png" alt="Istaknuta Slika"
-                         style="border:solid white 1px; height: 152px; width:190px; margin-left:-15px;">
+                         style="border:solid white 1px; height: 150px; width:190px;">
                 </div>
             <?php endif; ?>
             <div class="col-sm-8">
@@ -32,9 +32,9 @@
 
                     </div>
                 </div>
-                <hr>
             </div>
         </div>
+        <hr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
     <div class="text-center">
