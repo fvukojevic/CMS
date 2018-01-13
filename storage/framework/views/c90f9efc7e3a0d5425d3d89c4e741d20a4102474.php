@@ -1,55 +1,140 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RWA | Admin Panel</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-          page. However, you can choose any other skin. Make sure you
-          apply the skin class to the body tag so the changes take effect. -->
-    <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
+<?php $__env->startSection('content'); ?>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                Početna Stranica
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i>Pocetak</a></li>
+                <li class="active">Pocetna</li>
+            </ol>
+        </section>
 
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
+        <!-- Main content -->
+        <section class="content container-fluid">
 
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-aqua">
+                        <div class="inner">
+                            <h3><?php echo e($numofPosts); ?></h3>
 
-<?php echo $__env->make('admin.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                            <p>Objava</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-file-o"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">Više <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-green">
+                        <div class="inner">
+                            <h3><?php echo e($numofComments); ?></h3>
 
-<?php echo $__env->make('admin.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                            <p>Komentara</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-comment"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">Više <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-yellow">
+                        <div class="inner">
+                            <h3><?php echo e($numofUsers); ?></h3>
 
-<?php echo $__env->make('admin.stats', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-</div>
+                            <p>Korisnika Registrirano</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">Više <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-xs-6">
+                    <!-- small box -->
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3><?php echo e($numOfCategories); ?></h3>
 
-<!-- REQUIRED JS SCRIPTS -->
+                            <p>Kategorija</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">Više <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
 
-<!-- jQuery 3 -->
-<script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/public/dist/js/adminlte.min.js"></script>
+        </section>
 
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
-</body>
-</html>
+        <div class="col-md-6" style="margin-top:-30px">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <i class="ion ion-clipboard"></i>
+
+                    <h3 class="box-title">Podsjetnik</h3>
+                    <form method="POST" action="<?php echo e(('/public/reminder/create')); ?>">
+                        <?php echo e(csrf_field()); ?>
+
+                        <div class="input-group margin">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-warning">Dodaj podsjetnik</button>
+                            </div>
+                            <input title="podsjetnik" type="text" id="dodaj_podsjetnik" name="name" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <ul class="todo-list">
+                        <?php $__currentLoopData = $reminders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $reminder): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <li>
+                        <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                                <span class="text"><?php echo e($reminder->name); ?></span>
+                                <small class="label label-info"><i
+                                            class="fa fa-clock-o"></i> <?php echo e($reminder->created_at->diffForHumans()); ?>
+
+                                </small>
+                                <div class="tools">
+                                    <a href="/public/reminder/edit/<?php echo e($reminder->id); ?>"><i class="fa fa-edit"></i></a>
+                                    <a href="/public/reminder/delete/<?php echo e($reminder->id); ?>"> <i class="fa fa-trash-o"></i></a>
+                                </div>
+                            </li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer clearfix no-border">
+                    <div class="pull-right inline">
+                        <?php echo e($reminders->links()); ?>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- ./wrapper -->
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

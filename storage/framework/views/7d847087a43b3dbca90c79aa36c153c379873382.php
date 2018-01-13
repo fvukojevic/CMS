@@ -1,78 +1,6 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RWA | Admin Panel</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
+<?php $__env->startSection('content'); ?>
 
-    <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
-
-    <link rel="stylesheet" href="/public/plugins/iCheck/all.css">
-    <link rel="stylesheet" href="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-
-    <!-- Main Header -->
-    <header class="main-header">
-
-        <!-- Logo -->
-        <a href="#" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>RWA</b></span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>RWA </b>AdminPanel</span>
-        </a>
-
-        <!-- Header Navbar -->
-        <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <!-- Navbar Right Menu -->
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-
-
-                    <li>
-
-                        <a href="#" class="btn btn-danger btn-flat">Odjava</a>
-
-                    </li>
-
-
-                </ul>
-            </div>
-        </nav>
-    </header>
-<?php echo $__env->make('admin.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
-<!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
 
@@ -151,6 +79,21 @@
                         <!-- /.col-->
                     </div>
                     <div class="col-md-2">
+
+                        <div class="box box-primary">
+                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
+                            </div>
+                            <div class="box-body">
+                                <div class="form-group">
+
+                                   <span class="btn btn-default btn-file">
+                                         <i class="fa fa-plus-circle " style="margin-top:65px"></i> <span>Dodaj Istaknutu Sliku</span></a>
+                                       <input type="file" name="post_thumbnail" id="post_thumbnail">
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="box box-primary">
                             <div class="box-header"><h3> TAGOVI </h3><span class="small">Odaberite odgovarajuće tagove za vašu objavu.</span>
                             </div>
@@ -169,16 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="box box-primary">
-                            <div class="box-header"><h3> ISTAKNUTA SLIKA </h3><span class="small">Slika koja će biti izdvojena u objavi.</span>
-                            </div>
-                            <div class="box-body">
-                                <div class="form-group">
-                                    <label for="post_thumbnail">Odaberite istaknutu sliku:</label> <br/>
-                                    <input type="file" name="post_thumbnail" id="post_thumbnail"/>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </form>
                 <!-- ./row -->
@@ -187,53 +121,7 @@
 
         <!-- Main content -->
 
-
     </div>
 
-
-    <!-- /.content -->
-
-    <!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            Admin Panel v1.0
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2018 <a href="#">RWA_FSR_CMS</a>.</strong> All rights reserved.
-    </footer>
-
-
-</div>
-<!-- ./wrapper -->
-<!-- jQuery 3 -->
-<script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/public/dist/js/adminlte.min.js"></script>
-
-
-<!-- FastClick -->
-<script src="/public/bower_components/fastclick/lib/fastclick.js"></script>
-
-
-<!-- CK Editor -->
-<script src="/public/bower_components/ckeditor/ckeditor.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<script>
-    $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
-        CKEDITOR.replace('editor1')
-        //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
-    })
-</script>
-
-
-</body>
-</html>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
