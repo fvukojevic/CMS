@@ -33,7 +33,7 @@
                                     <th>ID</th>
                                     <th>Korisnik</th>
                                     <th>Datum Registracije</th>
-                                    <th>Status</th>
+                                    <th>Uloga</th>
                                     <th>Razlog</th>
                                     <th>Upravljanje</th>
                                 </tr>
@@ -44,7 +44,13 @@
                                         <td><?php echo e($user->id); ?></td>
                                         <td><?php echo e($user->name); ?></td>
                                         <td><?php echo e($user->created_at->diffForHumans()); ?></td>
-                                        <td><span class="label label-success">REGISTRIRAN</span></td>
+                                        <?php if($user->role == 'admin'): ?>
+                                            <td><span class="label label-danger">Administrator</span></td>
+                                        <?php elseif($user->role == 'moderator'): ?>
+                                            <td><span class="label label-warning">Moderator</span></td>
+                                        <?php else: ?>
+                                            <td><span class="label label-success">Registriran</span></td>
+                                        <?php endif; ?>
                                         <td><?php echo e($user->email); ?></td>
                                         <td>
                                             <button class="btn btn-xs btn-warning">UREDI</button>

@@ -35,7 +35,7 @@
                                     <th>ID</th>
                                     <th>Korisnik</th>
                                     <th>Datum Registracije</th>
-                                    <th>Status</th>
+                                    <th>Uloga</th>
                                     <th>Razlog</th>
                                     <th>Upravljanje</th>
                                 </tr>
@@ -46,7 +46,13 @@
                                         <td>{{$user->id}}</td>
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->created_at->diffForHumans()}}</td>
-                                        <td><span class="label label-success">REGISTRIRAN</span></td>
+                                        @if($user->role == 'admin')
+                                            <td><span class="label label-danger">Administrator</span></td>
+                                        @elseif($user->role == 'moderator')
+                                            <td><span class="label label-warning">Moderator</span></td>
+                                        @else
+                                            <td><span class="label label-success">Registriran</span></td>
+                                        @endif
                                         <td>{{$user->email}}</td>
                                         <td>
                                             <button class="btn btn-xs btn-warning">UREDI</button>
