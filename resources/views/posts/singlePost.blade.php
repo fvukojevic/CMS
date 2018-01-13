@@ -42,14 +42,19 @@
             @if($post->comments()->count()>0)
 
                 @foreach($post->comments as $comment)
-                    <li class="list-group-item">
 
-                        <strong>
-                            {{ $comment->created_at->diffForHumans() }}: &nbsp;
-                        </strong>
-
-                        {{ $comment->body }}
-
+                    <li class="list-group-item" >
+                        <div class="row">
+                        <div class="col-sm-2" style="text-align:center;">
+                            <img src="/public/uploads/no_thumbnail_pic/NULL.png" alt="Istaknuta Slika"
+                                 style="border:solid white 1px; height: 100px; width:100px;">
+                            <p><strong style="position:absolute;left:15px;bottom:-5px">Luka Bjelica</strong></p>
+                        </div>
+                            <div class="col-sm-10">
+                                <p><strong>Komentar: </strong>{{ $comment->body }}</p>
+                        <p style="position:absolute;right:3px;bottom:-20px">  <strong>Objavljeno: </strong> {{ $comment->created_at->diffForHumans()}}</p>
+                            </div>
+                        </div>
                     </li>
                 @endforeach
 
