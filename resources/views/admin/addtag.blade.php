@@ -36,7 +36,7 @@
                 <div class="col-xs-12">
                     <div class="box box-primary">
                         <div class="box-header">
-                            <form method="POST" action="{{('/public/tag/create')}}">
+                            <form method="POST" action="{{('/fsr-cms/public/tag/create')}}">
                                 {{ csrf_field() }}
                                 <div class="input-group margin">
                                     <div class="input-group-btn">
@@ -69,9 +69,9 @@
                                         <td>{{$tag->name}}</td>
                                         <td><span class="label label-success">AKTIVNA</span></td>
                                         <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td><a href="/public/admin/tag/edit/{{ $tag->id }}"><span
+                                        <td><a href="/fsr-cms/public/admin/tag/edit/{{ $tag->id }}"><span
                                                         class="label label-warning">UREDI</span></a>
-                                            <a href="/public/tag/delete/{{ $tag->id }}"><span
+                                            <a href="/fsr-cms/public/tag/delete/{{ $tag->id }}"><span
                                                         class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach

@@ -5,18 +5,18 @@
     <title>RWA | Admin Panel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" href="/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fsr-cms/public/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/public/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/fsr-cms/public/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="/public/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="/fsr-cms/public/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/public/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/fsr-cms/public/dist/css/AdminLTE.min.css">
 
-    <link rel="stylesheet" href="/public/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="/fsr-cms/public/dist/css/skins/skin-blue.min.css">
 
-    <link rel="stylesheet" href="/public/plugins/iCheck/all.css">
-    <link rel="stylesheet" href="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="/fsr-cms/public/plugins/iCheck/all.css">
+    <link rel="stylesheet" href="/fsr-cms/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -78,21 +78,21 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/fsr-cms/public/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/fsr-cms/public/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/public/dist/js/adminlte.min.js"></script>
+<script src="/fsr-cms/public/dist/js/adminlte.min.js"></script>
 
 
 <!-- FastClick -->
-<script src="/public/bower_components/fastclick/lib/fastclick.js"></script>
+<script src="/fsr-cms/public/bower_components/fastclick/lib/fastclick.js"></script>
 
 
 <!-- CK Editor -->
-<script src="/public/bower_components/ckeditor/ckeditor.js"></script>
+<script src="/fsr-cms/public/bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="/fsr-cms/public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <script>
     $(function () {
         // Replace the <textarea id="editor1"> with a CKEditor
@@ -105,9 +105,9 @@
 
 <!-- DataTables -->
 
-<script src="/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/fsr-cms/public/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 
-<script src="/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="/fsr-cms/public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
 
 <script>

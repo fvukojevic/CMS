@@ -11,7 +11,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li><a href="/fsr-cms/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li class="active">Korisnici</li>
             </ol>
         </section>

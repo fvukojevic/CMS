@@ -25,7 +25,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li><a href="/fsr-cms/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li>Objave</li>
                 <li class="active">Dodaj Kategoriju</li>
             </ol>
@@ -38,7 +38,7 @@
                 <div class="col-xs-12">
                     <div class="box box-primary">
                         <div class="box-header">
-                            <form method="POST" action="{{('/public/ctg/create')}}">
+                            <form method="POST" action="{{('/fsr-cms/public/ctg/create')}}">
                                 {{ csrf_field() }}
                                 <div class="input-group margin">
                                     <div class="input-group-btn">
@@ -71,8 +71,8 @@
                                         <td>{{$category->name}}</td>
                                         <td><span class="label label-success">AKTIVNA</span></td>
                                         <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td> <a href="/public/admin/category/edit/{{ $category->id }}"><span class="label label-warning">UREDI</span></a>
-                                            <a href="/public/ctg/delete/{{ $category->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
+                                        <td> <a href="/fsr-cms/public/admin/category/edit/{{ $category->id }}"><span class="label label-warning">UREDI</span></a>
+                                            <a href="/fsr-cms/public/ctg/delete/{{ $category->id }}"><span class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

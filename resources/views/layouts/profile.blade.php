@@ -10,15 +10,15 @@
                 <h1 style="margin-left:16%">Vaš profil</h1>
                 @if($user->profile_pic)
                     <div class="col-md-2 hidden-xs offset-2">
-                        <img style="position:relative;" src="/public/uploads/profile/{{$user->profile_pic}}"
+                        <img style="position:relative;" src="/fsr-cms/public/uploads/profile/{{$user->profile_pic}}"
                              class="img-responsive img-thumbnail ">
-                        <img style="position:absolute; top:-5px; right:15px;" src="/resources/assets/img/camera.png">
+                        <img style="position:absolute; top:-5px; right:15px;" src="/fsr-cms/resources/assets/img/camera.png">
                     </div>
                 @else
                     <div class="col-md-2 hidden-xs offset-2">
-                        <img style="position:relative;" src="/resources/assets/img/avatar.jpg"
+                        <img style="position:relative;" src="/fsr-cms/resources/assets/img/avatar.jpg"
                              class="img-responsive img-thumbnail ">
-                        <img style="position:absolute; top:-5px; right:15px;" src="/resources/assets/img/camera.png">
+                        <img style="position:absolute; top:-5px; right:15px;" src="/fsr-cms/resources/assets/img/camera.png">
                     </div>
             @endif
             <!-- edit form column -->
@@ -77,7 +77,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/resources/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/fsr-cms/resources/assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script>
     $(document).ready(function () {
         var mode = false;
@@ -103,7 +103,7 @@
         });
     })
 </script>
-<script src="/resources/assets/js/vendor/popper.min.js"></script>
-<script src="/resources/dist/js/bootstrap.min.js"></script>
+<script src="/fsr-cms/resources/assets/js/vendor/popper.min.js"></script>
+<script src="/fsr-cms/resources/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

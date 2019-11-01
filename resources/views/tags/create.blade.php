@@ -5,7 +5,7 @@
 
     <hr>
 
-    <form method="POST" action="{{('/public/tag/create')}}">
+    <form method="POST" action="{{('/fsr-cms/public/tag/create')}}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Ime Taga: </label>

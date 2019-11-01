@@ -4,21 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/resources/assets/img/favicons/favicon.ico">
+    <link rel="icon" href="/fsr-cms/resources/assets/img/favicons/favicon.ico">
 
     <title>FSR CMS | Dobrodošli!</title>
 
     <!-- Bootstrap CSS -->
-    <link href="/resources/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-grid.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-grid.min.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-reboot.css" rel="stylesheet">
-    <link href="/resources/dist/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/dist/css/bootstrap-grid.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/dist/css/bootstrap-reboot.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/dist/css/bootstrap-reboot.min.css" rel="stylesheet">
 
 
     <!-- CSS za FSRCMS -->
-    <link href="/resources/fsrcms.css" rel="stylesheet">
+    <link href="/fsr-cms/resources/fsrcms.css" rel="stylesheet">
 </head>
 
 <body>
@@ -66,7 +66,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/resources/assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="/fsr-cms/resources/assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script>
     $(document).ready(function()
     {
@@ -96,7 +96,7 @@
         });
     })
 </script>
-<script src="/resources/assets/js/vendor/popper.min.js"></script>
-<script src="/resources/dist/js/bootstrap.min.js"></script>
+<script src="/fsr-cms/resources/assets/js/vendor/popper.min.js"></script>
+<script src="/fsr-cms/resources/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

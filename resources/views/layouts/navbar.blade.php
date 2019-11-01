@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 
-    <a class="navbar-brand" href="/public">
+    <a class="navbar-brand" href="/fsr-cms/public">
         <div class="logo-container ">
             <div class="logo">
-                <img src="/resources/assets/img/fsrcmslogo.png" alt="FSRcms LOGO" rel="tooltip">
+                <img src="/fsr-cms/resources/assets/img/fsrcmslogo.png" alt="FSRcms LOGO" rel="tooltip">
             </div>
         </div>
     </a>
@@ -16,11 +16,11 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/public">Početna <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/fsr-cms/public">Početna <span class="sr-only">(current)</span></a>
             </li>
             @foreach($menuCategories as $menuCategory)
                 <li class="nav-item">
-                    <a class="nav-link" href="/public/category/{{ $menuCategory->name }}">{{ $menuCategory->name }}</a>
+                    <a class="nav-link" href="/fsr-cms/public/category/{{ $menuCategory->name }}">{{ $menuCategory->name }}</a>
                 </li>
             @endforeach
             <li class="nav-item dropdown">
@@ -42,11 +42,11 @@
                             aria-haspopup="true" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </button>
-                    <a id="nightmodeID"><img class="nightmodeCLS" src="/resources/assets/img/brightness.png"></a>
+                    <a id="nightmodeID"><img class="nightmodeCLS" src="/fsr-cms/resources/assets/img/brightness.png"></a>
                     <div class="dropdown-menu" style="right: 0; left: auto;">
-                        <a class="dropdown-item" href="/public/admin">Administracija</a>
-                        <a class="dropdown-item" href="/public/profile/edit">Moj profil</a>
-                        <a class="dropdown-item" href="/public/logout">Odjava</a>
+                        <a class="dropdown-item" href="/fsr-cms/public/admin">Administracija</a>
+                        <a class="dropdown-item" href="/fsr-cms/public/profile/edit">Moj profil</a>
+                        <a class="dropdown-item" href="/fsr-cms/public/logout">Odjava</a>
 
                     </div>
                 </div>
@@ -54,10 +54,10 @@
 
 
             @else
-                <a href="/public/login" class="btn btn-light" type="submit" style="margin-right:8px;">Login</a>
-                <a href="/public/register" class="btn btn-luksha" type="submit">Register</a>
+                <a href="/fsr-cms/public/login" class="btn btn-light" type="submit" style="margin-right:8px;">Login</a>
+                <a href="/fsr-cms/public/register" class="btn btn-luksha" type="submit">Register</a>
                 <a id="nightmodeID" style="cursor:pointer;"><img class="nightmodeCLS"
-                                                                 src="/resources/assets/img/brightness.png"></a>
+                                                                 src="/fsr-cms/resources/assets/img/brightness.png"></a>
             @endif
 
         </form>

@@ -6,26 +6,26 @@
         <div class="row">
             @if($post->post_thumbnail)
                 <div class="col-sm-4">
-                    <img src="/public/uploads/{{$post->post_thumbnail}}" alt="Istaknuta Slika"
+                    <img src="/fsr-cms/public/uploads/{{$post->post_thumbnail}}" alt="Istaknuta Slika"
                          style="border:solid white 1px; height: 150px; width:190px;">
                 </div>
             @else
                 <div class="col-sm-4">
-                    <img src="/public/uploads/no_thumbnail_pic/null.png" alt="Istaknuta Slika"
+                    <img src="/fsr-cms/public/uploads/no_thumbnail_pic/null.png" alt="Istaknuta Slika"
                          style="border:solid white 1px; height: 150px; width:190px;">
                 </div>
             @endif
             <div class="col-sm-8">
                 <div class="blog-post">
                     <h2 class="blog-post-title">
-                        <a href="/public/show/{{$post->id}}" class="blog-post-title">{{ $post->title }}</a>
+                        <a href="/fsr-cms/public/show/{{$post->id}}" class="blog-post-title">{{ $post->title }}</a>
                     </h2>
                     <p class="blog-post-meta">
                         {{ $post->created_at->toFormattedDateString() }}, autor <a href="#">{{ $post->user->name }}</a>
                         @if($post->categories()->count()>0)
                             , kategorije:
                             @foreach($post->categories->pluck('name') as $category)
-                                <a href="/public/category/{{ $category  }}">{{ $category  }}</a>
+                                <a href="/fsr-cms/public/category/{{ $category  }}">{{ $category  }}</a>
                             @endforeach
                         @endif
                     </p>

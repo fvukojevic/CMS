@@ -10,7 +10,7 @@
             <p>Kategorije:
                 @foreach($post->categories as $category)
                     <strong>
-                        <a href="/public/category/{{ $category->name }}">{{ $category->name }}</a>
+                        <a href="/fsr-cms/public/category/{{ $category->name }}">{{ $category->name }}</a>
                     </strong>
                 @endforeach
             </p>
@@ -29,7 +29,7 @@
             <p>Oznake:
                 @foreach($post->tags as $tag)
                     <strong>
-                    #<a href="/public/tags/{{ $tag->name }}">{{ $tag->name }}</a>
+                    #<a href="/fsr-cms/public/tags/{{ $tag->name }}">{{ $tag->name }}</a>
                     </strong>
                 @endforeach
             </p>
@@ -46,7 +46,7 @@
                     <li class="list-group-item" >
                         <div class="row">
                         <div class="col-sm-2" style="text-align:center;">
-                            <img src="/public/uploads/no_thumbnail_pic/NULL.png" alt="Istaknuta Slika"
+                            <img src="/fsr-cms/public/uploads/no_thumbnail_pic/NULL.png" alt="Istaknuta Slika"
                                  style="border:solid white 1px; height: 100px; width:100px;">
                             <p><strong style="position:absolute;left:15px;bottom:-5px">Luka Bjelica</strong></p>
                         </div>

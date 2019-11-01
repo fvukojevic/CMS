@@ -26,7 +26,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li><a href="/fsr-cms/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li>Objave</li>
                 <li class="active">Uređivač Objava</li>
             </ol>
@@ -34,7 +34,7 @@
 
         <section class="content">
             <div class="row">
-                <form method="POST" action="/public/create" enctype="multipart/form-data">
+                <form method="POST" action="/fsr-cms/public/create" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="col-md-10">
                         <div class="box box-primary">

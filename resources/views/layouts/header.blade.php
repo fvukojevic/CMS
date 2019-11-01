@@ -8,7 +8,7 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="first-slide" src="/resources/assets/img/pozadina2.jpg" alt="">
+                <img class="first-slide" src="/fsr-cms/resources/assets/img/pozadina2.jpg" alt="">
                 <div class="container">
                     <div class="carousel-caption text-left">
                         <h1>Neki naslov.</h1>
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="second-slide" src="/resources/assets/img/pozadina.jpg" alt="Second slide">
+                <img class="second-slide" src="/fsr-cms/resources/assets/img/pozadina.jpg" alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>Neki naslov opet.</h1>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="third-slide" src="/resources/assets/img/pozadina2.jpg" alt="Third slide">
+                <img class="third-slide" src="/fsr-cms/resources/assets/img/pozadina2.jpg" alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption text-right">
                         <h1>Neki naslov opet opet.</h1>

@@ -90,7 +90,7 @@
                     <i class="ion ion-clipboard"></i>
 
                     <h3 class="box-title">Podsjetnik</h3>
-                    <form method="POST" action="{{('/public/reminder/create')}}">
+                    <form method="POST" action="{{('/fsr-cms/public/reminder/create')}}">
                         {{ csrf_field() }}
                         <div class="input-group margin">
                             <div class="input-group-btn">
@@ -114,8 +114,8 @@
                                             class="fa fa-clock-o"></i> {{ $reminder->created_at->diffForHumans() }}
                                 </small>
                                 <div class="tools">
-                                    <a href="/public/reminder/edit/{{ $reminder->id }}"><i class="fa fa-edit"></i></a>
-                                    <a href="/public/reminder/delete/{{ $reminder->id }}"> <i class="fa fa-trash-o"></i></a>
+                                    <a href="/fsr-cms/public/reminder/edit/{{ $reminder->id }}"><i class="fa fa-edit"></i></a>
+                                    <a href="/fsr-cms/public/reminder/delete/{{ $reminder->id }}"> <i class="fa fa-trash-o"></i></a>
                                 </div>
                             </li>
                         @endforeach

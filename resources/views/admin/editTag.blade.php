@@ -36,7 +36,7 @@
                 <div class="col-xs-12">
                     <div class="box box-primary">
                         <div class="box-header">
-                            <form method="POST" action="/public/tag/update/{{ $tag->id }}">
+                            <form method="POST" action="/fsr-cms/public/tag/update/{{ $tag->id }}">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
                                 <div class="input-group margin">

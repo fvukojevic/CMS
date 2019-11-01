@@ -35,7 +35,7 @@
                 <div class="col-xs-12">
                     <div class="box box-primary">
                         <div class="box-header">
-                            <form method="POST" action="/public/reminder/update/{{ $reminder->id }}">
+                            <form method="POST" action="/fsr-cms/public/reminder/update/{{ $reminder->id }}">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
                                 <div class="input-group margin">

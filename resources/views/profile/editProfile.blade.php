@@ -16,19 +16,19 @@
             </div>
         @endif
         <div class="user-settings">
-            <form method="POST" action="/public/profile/update" class="form-horizontal"
+            <form method="POST" action="/fsr-cms/public/profile/update" class="form-horizontal"
                   role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
                 <h1 style="text-align: center;">Vaš profil</h1><hr>
                 @if($user->profile_pic)
                     <div class="col-md-4 offset-3">
-                        <img style="position:relative;" src="/public/uploads/profile/{{$user->profile_pic}}"
+                        <img style="position:relative;" src="/fsr-cms/public/uploads/profile/{{$user->profile_pic}}"
                              class="img-responsive img-thumbnail ">
                     </div>
                 @else
                     <div class="col-md-2 offset-5">
-                        <img style="position:relative;" src="/resources/assets/img/avatar.jpg"
+                        <img style="position:relative;" src="/fsr-cms/resources/assets/img/avatar.jpg"
                              class="img-responsive img-thumbnail ">
                     </div>
             @endif
@@ -66,7 +66,7 @@
 
             <hr>
 
-            <form method="POST" action="/public/profile/password" class="form-horizontal"
+            <form method="POST" action="/fsr-cms/public/profile/password" class="form-horizontal"
                   role="form">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}

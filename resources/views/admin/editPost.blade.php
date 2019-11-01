@@ -25,7 +25,7 @@
 
             </h1>
             <ol class="breadcrumb">
-                <li><a href="/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
+                <li><a href="/fsr-cms/public/admin"><i class="fa fa-dashboard"></i> Pocetak</a></li>
                 <li>Objave</li>
                 <li class="active">Uredi objavu</li>
             </ol>
@@ -33,7 +33,7 @@
 
         <section class="content">
             <div class="row">
-                <form method="POST" action="/public/post/update/{{ $post->id }}" enctype="multipart/form-data">
+                <form method="POST" action="/fsr-cms/public/post/update/{{ $post->id }}" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
                     <div class="col-md-10">

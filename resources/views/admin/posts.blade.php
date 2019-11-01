@@ -48,9 +48,9 @@
                                         <td><span class="label label-success">OBJAVLJENO</span></td>
                                         <td>{{ $post->user->name }}</td>
 
-                                        <td><a href="/public/admin/post/edit/{{ $post->id }}"><span
+                                        <td><a href="/fsr-cms/public/admin/post/edit/{{ $post->id }}"><span
                                                         class="label label-warning">UREDI</span></a>
-                                            <a href="/public/post/delete/{{ $post->id }}"><span
+                                            <a href="/fsr-cms/public/post/delete/{{ $post->id }}"><span
                                                         class="label label-danger">OBRIŠI</span></a></td>
                                     </tr>
                                 @endforeach

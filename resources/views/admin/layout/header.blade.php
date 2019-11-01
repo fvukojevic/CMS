@@ -25,7 +25,7 @@
 
                 <li>
 
-                    <a href="/public/logout" class="btn btn-danger btn-flat">Odjava</a>
+                    <a href="/fsr-cms/public/logout" class="btn btn-danger btn-flat">Odjava</a>
 
                 </li>
 

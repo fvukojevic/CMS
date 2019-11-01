@@ -5,7 +5,7 @@
 
     <hr>
 
-    <form method="POST" action="{{('/public/ctg/create')}}">
+    <form method="POST" action="{{('/fsr-cms/public/ctg/create')}}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">Ime Kategorije: </label>
